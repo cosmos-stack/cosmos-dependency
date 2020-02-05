@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9F8667D6-DC70-4CB3-9DA1-42406A08D262}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{682DBB20-DD52-4F66-AC0D-77DB7174C290}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2AB5A442-2FFC-400E-98D4-F5C16248A3C5}"
+ProjectSection(SolutionItems) = preProject
+	.gitignore = .gitignore
+	LICENSE = LICENSE
+	NuGet.config = NuGet.config
+	README.MD = README.MD
+	Publish.bat = Publish.bat
+	PublishToMyGet.bat = PublishToMyGet.bat
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{DDBA4F9D-9394-4F13-A027-1945D83CD4C5}"
+ProjectSection(SolutionItems) = preProject
+	build\common.props = build\common.props
+	build\misc.props = build\misc.props
+	build\package.props = build\package.props
+	build\version.props = build\version.props
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Dependency.Core", "src\Cosmos.Extensions.Dependency.Core\Cosmos.Extensions.Dependency.Core.csproj", "{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.DependencyInjection", "src\Cosmos.Extensions.DependencyInjection\Cosmos.Extensions.DependencyInjection.csproj", "{14F856A8-63A8-46D1-BF1E-876EFEE9901D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Autofac", "src\Cosmos.Extensions.Autofac\Cosmos.Extensions.Autofac.csproj", "{A2CB6EF9-064A-4209-B9C4-2A3733E074A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.AspectCoreInjector", "src\Cosmos.Extensions.AspectCoreInjector\Cosmos.Extensions.AspectCoreInjector.csproj", "{DC1B514F-6CA1-40DB-807D-467631A0F057}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DDBA4F9D-9394-4F13-A027-1945D83CD4C5} = {2AB5A442-2FFC-400E-98D4-F5C16248A3C5}
+		{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0} = {9F8667D6-DC70-4CB3-9DA1-42406A08D262}
+		{14F856A8-63A8-46D1-BF1E-876EFEE9901D} = {9F8667D6-DC70-4CB3-9DA1-42406A08D262}
+		{A2CB6EF9-064A-4209-B9C4-2A3733E074A8} = {9F8667D6-DC70-4CB3-9DA1-42406A08D262}
+		{DC1B514F-6CA1-40DB-807D-467631A0F057} = {9F8667D6-DC70-4CB3-9DA1-42406A08D262}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F856A8-63A8-46D1-BF1E-876EFEE9901D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F856A8-63A8-46D1-BF1E-876EFEE9901D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F856A8-63A8-46D1-BF1E-876EFEE9901D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F856A8-63A8-46D1-BF1E-876EFEE9901D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2CB6EF9-064A-4209-B9C4-2A3733E074A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2CB6EF9-064A-4209-B9C4-2A3733E074A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2CB6EF9-064A-4209-B9C4-2A3733E074A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2CB6EF9-064A-4209-B9C4-2A3733E074A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC1B514F-6CA1-40DB-807D-467631A0F057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC1B514F-6CA1-40DB-807D-467631A0F057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC1B514F-6CA1-40DB-807D-467631A0F057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC1B514F-6CA1-40DB-807D-467631A0F057}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

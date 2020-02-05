@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Extensions.Autofac</name>
+    </assembly>
+    <members>
+        <member name="T:Autofac.RegisterTypesExtensions">
+            <summary>
+            Extensions for Autofac
+            </summary>
+        </member>
+        <member name="M:Autofac.RegisterTypesExtensions.RegisterProxyFrom(Autofac.ContainerBuilder,Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+            <summary>
+            Register Proxy
+            </summary>
+            <param name="services"></param>
+            <param name="bag"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Cosmos.Extensions.Dependency.AutofacProxyRegister">
+            <summary>
+            Autofac dependency proxy register
+            </summary>
+        </member>
+        <member name="M:Cosmos.Extensions.Dependency.AutofacProxyRegister.#ctor(Autofac.ContainerBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Extensions.Dependency.AutofacProxyRegister.Dispose(System.Boolean)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\build\common.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp3.1;netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Dependency.Core</AssemblyName>
+        <PackageId>Cosmos.Extensions.Dependency.Core</PackageId>
+        <Description>Dependency core libaray for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Cosmos.Standard" Version="0.1.3-beta2-130505" />
+    </ItemGroup>
+
+</Project>

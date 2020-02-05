@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Extensions.AspectCoreInjector</name>
+    </assembly>
+    <members>
+        <member name="T:AspectCore.DependencyInjection.AspectCoreInjectorExtensions">
+            <summary>
+            Extensions for NCC AspectCore
+            </summary>
+        </member>
+        <member name="M:AspectCore.DependencyInjection.AspectCoreInjectorExtensions.RegisterProxyFrom(AspectCore.DependencyInjection.IServiceContext,Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+            <summary>
+            Register Proxy
+            </summary>
+            <param name="services"></param>
+            <param name="bag"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Cosmos.Extensions.Dependency.AspectCoreProxyRegister">
+            <summary>
+            AspectCore dependency proxy register
+            </summary>
+        </member>
+        <member name="M:Cosmos.Extensions.Dependency.AspectCoreProxyRegister.#ctor(AspectCore.DependencyInjection.IServiceContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Extensions.Dependency.AspectCoreProxyRegister.Dispose(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Extensions.Dependency.LifetimeExtensions">
+            <summary>
+            Extensions for lifetime
+            </summary>
+        </member>
+        <member name="M:Cosmos.Extensions.Dependency.LifetimeExtensions.ToAspectCoreLifetime(Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+            <summary>
+            To NCC AspectCore lifetime
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

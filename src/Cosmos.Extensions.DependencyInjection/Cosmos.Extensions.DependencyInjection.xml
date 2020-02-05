@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Extensions.DependencyInjection</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Extensions.Dependency.LifetimeExtensions">
+            <summary>
+            Lifetime extensions
+            </summary>
+        </member>
+        <member name="M:Cosmos.Extensions.Dependency.LifetimeExtensions.ToMsLifetime(Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+            <summary>
+            To Microsoft Lifetime
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Extensions.Dependency.MicrosoftProxyRegister">
+            <summary>
+            Microsoft dependency proxy register
+            </summary>
+        </member>
+        <member name="M:Cosmos.Extensions.Dependency.MicrosoftProxyRegister.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Extensions.Dependency.MicrosoftProxyRegister.Dispose(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.DependencyInjectionExtensions">
+            <summary>
+            Extensions for Dependency Injection
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.DependencyInjectionExtensions.AddRegisterProxyFrom(Microsoft.Extensions.DependencyInjection.IServiceCollection,Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+            <summary>
+            Add Register Proxy
+            </summary>
+            <param name="services"></param>
+            <param name="bag"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+    </members>
+</doc>
