@@ -189,6 +189,20 @@ namespace Cosmos.Extensions.Dependency {
             bag.Register(DependencyRegisterDescriptor.Create<TService>(DependencyLifetimeType.Scoped));
             return bag;
         }
+        
+        /// <summary>
+        /// Add Scoped
+        /// </summary>
+        /// <param name="bag"></param>
+        /// <param name="serviceType"></param>
+        /// <param name="implementationType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static DependencyProxyRegister AddScoped(this DependencyProxyRegister bag, Type serviceType, Type implementationType) {
+            if (bag is null) throw new ArgumentNullException(nameof(bag));
+            bag.Register(DependencyRegisterDescriptor.Create(serviceType, implementationType, DependencyLifetimeType.Scoped));
+            return bag;
+        }
 
         /// <summary>
         /// Add Scoped
@@ -379,6 +393,20 @@ namespace Cosmos.Extensions.Dependency {
             if (bag is null) throw new ArgumentNullException(nameof(bag));
             if (implementationFunc is null) throw new ArgumentNullException(nameof(implementationFunc));
             bag.TryRegister(DependencyRegisterDescriptor.Create(implementationFunc, implementationType, DependencyLifetimeType.Scoped));
+        }
+        
+        /// <summary>
+        /// Try add Scoped
+        /// </summary>
+        /// <param name="bag"></param>
+        /// <param name="serviceType"></param>
+        /// <param name="implementationType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static DependencyProxyRegister TryAddScoped(this DependencyProxyRegister bag, Type serviceType, Type implementationType) {
+            if (bag is null) throw new ArgumentNullException(nameof(bag));
+            bag.TryRegister(DependencyRegisterDescriptor.Create(serviceType, implementationType, DependencyLifetimeType.Scoped));
+            return bag;
         }
 
         /// <summary>

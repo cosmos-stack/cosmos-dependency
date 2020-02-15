@@ -112,6 +112,23 @@ namespace Cosmos.Extensions.Dependency.Core {
         /// <summary>
         /// Create
         /// </summary>
+        /// <param name="serviceType"></param>
+        /// <param name="implementationType"></param>
+        /// <param name="lifetimeType"></param>
+        /// <returns></returns>
+        public static DependencyRegisterDescriptor Create(Type serviceType, Type implementationType, DependencyLifetimeType lifetimeType) {
+            return new DependencyRegisterDescriptor {
+                RegisterType = serviceType,
+                ServiceType = serviceType,
+                ImplementationType = implementationType,
+                ProxyType = DependencyProxyType.TypeToType,
+                LifetimeType = lifetimeType
+            };
+        }
+
+        /// <summary>
+        /// Create
+        /// </summary>
         /// <param name="instance"></param>
         /// <param name="implementationType"></param>
         /// <param name="lifetimeType"></param>

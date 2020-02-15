@@ -9,6 +9,5 @@ namespace Cosmos.Extensions.Dependency.Core {
         /// Instance func for implementation
         /// </summary>
         public Func<TResolver, object> ResolveFuncForImplementation { get; set; }
-
     }
 }

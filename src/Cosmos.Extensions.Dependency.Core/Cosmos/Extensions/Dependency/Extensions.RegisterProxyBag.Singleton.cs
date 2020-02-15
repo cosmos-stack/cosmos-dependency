@@ -189,6 +189,20 @@ namespace Cosmos.Extensions.Dependency {
             bag.Register(DependencyRegisterDescriptor.Create<TService>(DependencyLifetimeType.Singleton));
             return bag;
         }
+        
+        /// <summary>
+        /// Add Singleton
+        /// </summary>
+        /// <param name="bag"></param>
+        /// <param name="serviceType"></param>
+        /// <param name="implementationType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static DependencyProxyRegister AddSingleton(this DependencyProxyRegister bag, Type serviceType, Type implementationType) {
+            if (bag is null) throw new ArgumentNullException(nameof(bag));
+            bag.Register(DependencyRegisterDescriptor.Create(serviceType, implementationType, DependencyLifetimeType.Singleton));
+            return bag;
+        }
 
         /// <summary>
         /// Add singleton
@@ -379,6 +393,20 @@ namespace Cosmos.Extensions.Dependency {
         public static void TryAddSingleton<TService>(this DependencyProxyRegister bag) {
             if (bag is null) throw new ArgumentNullException(nameof(bag));
             bag.TryRegister(DependencyRegisterDescriptor.Create<TService>(DependencyLifetimeType.Singleton));
+        }
+        
+        /// <summary>
+        /// Try add Singleton
+        /// </summary>
+        /// <param name="bag"></param>
+        /// <param name="serviceType"></param>
+        /// <param name="implementationType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static DependencyProxyRegister TryAddSingleton(this DependencyProxyRegister bag, Type serviceType, Type implementationType) {
+            if (bag is null) throw new ArgumentNullException(nameof(bag));
+            bag.TryRegister(DependencyRegisterDescriptor.Create(serviceType, implementationType, DependencyLifetimeType.Singleton));
+            return bag;
         }
 
         /// <summary>

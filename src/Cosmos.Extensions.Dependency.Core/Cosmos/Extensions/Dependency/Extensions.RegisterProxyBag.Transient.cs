@@ -194,6 +194,20 @@ namespace Cosmos.Extensions.Dependency {
         /// Add Transient
         /// </summary>
         /// <param name="bag"></param>
+        /// <param name="serviceType"></param>
+        /// <param name="implementationType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static DependencyProxyRegister AddTransient(this DependencyProxyRegister bag, Type serviceType, Type implementationType) {
+            if (bag is null) throw new ArgumentNullException(nameof(bag));
+            bag.Register(DependencyRegisterDescriptor.Create(serviceType, implementationType, DependencyLifetimeType.Transient));
+            return bag;
+        }
+
+        /// <summary>
+        /// Add Transient
+        /// </summary>
+        /// <param name="bag"></param>
         /// <param name="implementation"></param>
         /// <param name="implementationType"></param>
         /// <returns></returns>
@@ -379,6 +393,20 @@ namespace Cosmos.Extensions.Dependency {
         public static void TryAddTransient<TService>(this DependencyProxyRegister bag) {
             if (bag is null) throw new ArgumentNullException(nameof(bag));
             bag.TryRegister(DependencyRegisterDescriptor.Create<TService>(DependencyLifetimeType.Transient));
+        }
+        
+        /// <summary>
+        /// Try add Transient
+        /// </summary>
+        /// <param name="bag"></param>
+        /// <param name="serviceType"></param>
+        /// <param name="implementationType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static DependencyProxyRegister TryAddTransient(this DependencyProxyRegister bag, Type serviceType, Type implementationType) {
+            if (bag is null) throw new ArgumentNullException(nameof(bag));
+            bag.TryRegister(DependencyRegisterDescriptor.Create(serviceType, implementationType, DependencyLifetimeType.Transient));
+            return bag;
         }
 
         /// <summary>
