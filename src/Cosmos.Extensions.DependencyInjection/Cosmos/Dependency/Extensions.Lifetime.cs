@@ -1,18 +1,21 @@
-﻿using Cosmos.Extensions.Dependency.Core;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Cosmos.Extensions.Dependency {
+namespace Cosmos.Dependency
+{
     /// <summary>
     /// Lifetime extensions
     /// </summary>
-    public static class LifetimeExtensions {
+    public static class LifetimeExtensions
+    {
         /// <summary>
         /// To Microsoft Lifetime
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static ServiceLifetime ToMsLifetime(this DependencyLifetimeType type) {
-            return type switch {
+        public static ServiceLifetime ToMsLifetime(this DependencyLifetimeType type)
+        {
+            return type switch
+            {
                 DependencyLifetimeType.Scoped    => ServiceLifetime.Scoped,
                 DependencyLifetimeType.Singleton => ServiceLifetime.Singleton,
                 DependencyLifetimeType.Transient => ServiceLifetime.Transient,

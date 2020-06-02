@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
 
-namespace Cosmos.Extensions.Dependency.Core {
+namespace Cosmos.Dependency
+{
     /// <summary>
     /// Register proxy bag
     /// </summary>
     /// <typeparam name="TServices"></typeparam>
-    public abstract class DependencyProxyRegister<TServices> : DependencyProxyRegister, IDisposable {
+    public abstract class DependencyProxyRegister<TServices> : DependencyProxyRegister, IDisposable
+    {
         /// <inheritdoc />
-        protected DependencyProxyRegister(TServices services) {
+        protected DependencyProxyRegister(TServices services)
+        {
             RawServices = services ?? throw new ArgumentNullException(nameof(services));
 
             _preRegisterActionTable = new Dictionary<string, Action<TServices>>();
@@ -33,7 +36,8 @@ namespace Cosmos.Extensions.Dependency.Core {
         /// <param name="registerAct"></param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
-        public void AddPreRegister(string key, Action<TServices> registerAct) {
+        public void AddPreRegister(string key, Action<TServices> registerAct)
+        {
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
             if (registerAct is null)
@@ -50,7 +54,8 @@ namespace Cosmos.Extensions.Dependency.Core {
         /// <param name="registerAct"></param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
-        public void AddPostRegister(string key, Action<TServices> registerAct) {
+        public void AddPostRegister(string key, Action<TServices> registerAct)
+        {
             if (string.IsNullOrWhiteSpace(key))
                 throw new ArgumentNullException(nameof(key));
             if (registerAct is null)
@@ -63,7 +68,8 @@ namespace Cosmos.Extensions.Dependency.Core {
         /// <summary>
         /// Remove all register actions
         /// </summary>
-        public void RemoveAllRegisters() {
+        public void RemoveAllRegisters()
+        {
             RemoveAllPreRegisters();
             RemoveAllPostRegisters();
         }
@@ -90,9 +96,11 @@ namespace Cosmos.Extensions.Dependency.Core {
         /// <param name="key"></param>
         public void RemovePostRegister(string key) => _postRegisterActionTable.Remove(key);
 
-        private static Action<TServices> Combine(Dictionary<string, Action<TServices>> table) {
+        private static Action<TServices> Combine(Dictionary<string, Action<TServices>> table)
+        {
             Action<TServices> finallyAct = s => { };
-            foreach (var item in table) {
+            foreach (var item in table)
+            {
                 var action = item.Value;
                 if (action is null)
                     continue;
@@ -113,9 +121,10 @@ namespace Cosmos.Extensions.Dependency.Core {
         private bool _disposable;
 
         /// <inheritdoc />
-        public void Dispose() {
-
-            if (!_disposable) {
+        public void Dispose()
+        {
+            if (!_disposable)
+            {
                 Combine(_preRegisterActionTable)?.Invoke(RawServices);
 
                 Dispose(true);

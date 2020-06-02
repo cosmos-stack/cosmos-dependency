@@ -1,8 +1,10 @@
-﻿namespace Cosmos.Extensions.Dependency.Core {
+﻿namespace Cosmos.Dependency
+{
     /// <summary>
     /// Register proxy type
     /// </summary>
-    public enum DependencyProxyType {
+    public enum DependencyProxyType
+    {
         /// <summary>
         /// Type to type
         /// </summary>
@@ -17,7 +19,7 @@
         /// Type to instance func
         /// </summary>
         TypeToInstanceFunc,
-        
+
         /// <summary>
         /// Type to resolved instance func
         /// </summary>
@@ -37,7 +39,7 @@
         /// Instance self func
         /// </summary>
         InstanceSelfFunc,
-        
+
         /// <summary>
         /// Resolved instance selft func
         /// </summary>
