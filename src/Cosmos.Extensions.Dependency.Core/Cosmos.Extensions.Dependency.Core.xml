@@ -4,64 +4,64 @@
         <name>Cosmos.Extensions.Dependency.Core</name>
     </assembly>
     <members>
-        <member name="T:Cosmos.Extensions.Dependency.Core.DependencyLifetimeType">
+        <member name="T:Cosmos.Dependency.DependencyLifetimeType">
             <summary>
             Lifetime type for register proxy
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyLifetimeType.Scoped">
+        <member name="F:Cosmos.Dependency.DependencyLifetimeType.Scoped">
             <summary>
             Scoped
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyLifetimeType.Singleton">
+        <member name="F:Cosmos.Dependency.DependencyLifetimeType.Singleton">
             <summary>
             Singleton
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyLifetimeType.Transient">
+        <member name="F:Cosmos.Dependency.DependencyLifetimeType.Transient">
             <summary>
             Transient
             </summary>
         </member>
-        <member name="T:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister">
+        <member name="T:Cosmos.Dependency.DependencyProxyRegister">
             <summary>
             Register proxy bag
             </summary>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister.Register(Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor)">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.Register(Cosmos.Dependency.DependencyRegisterDescriptor)">
             <summary>
             Register
             </summary>
             <param name="descriptor"></param>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister.TryRegister(Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor)">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.TryRegister(Cosmos.Dependency.DependencyRegisterDescriptor)">
             <summary>
             Try register
             </summary>
             <param name="descriptor"></param>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister.ExportDescriptors">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.ExportDescriptors">
             <summary>
             Export Descriptors
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1">
+        <member name="T:Cosmos.Dependency.DependencyProxyRegister`1">
             <summary>
             Register proxy bag
             </summary>
             <typeparam name="TServices"></typeparam>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.#ctor(`0)">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.#ctor(`0)">
             <inheritdoc />
         </member>
-        <member name="P:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.RawServices">
+        <member name="P:Cosmos.Dependency.DependencyProxyRegister`1.RawServices">
             <summary>
             Gets raw services
             </summary>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.AddPreRegister(System.String,System.Action{`0})">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.AddPreRegister(System.String,System.Action{`0})">
             <summary>
             Add pre register action
             </summary>
@@ -70,7 +70,7 @@
             <exception cref="T:System.ArgumentNullException"></exception>
             <exception cref="T:System.ArgumentException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.AddPostRegister(System.String,System.Action{`0})">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.AddPostRegister(System.String,System.Action{`0})">
             <summary>
             Add post register action
             </summary>
@@ -79,128 +79,133 @@
             <exception cref="T:System.ArgumentNullException"></exception>
             <exception cref="T:System.ArgumentException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.RemoveAllRegisters">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.RemoveAllRegisters">
             <summary>
             Remove all register actions
             </summary>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.RemoveAllPreRegisters">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.RemoveAllPreRegisters">
             <summary>
             Remove all pre register actions
             </summary>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.RemoveAllPostRegisters">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.RemoveAllPostRegisters">
             <summary>
             Remove all post register actions
             </summary>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.RemovePreRegister(System.String)">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.RemovePreRegister(System.String)">
             <summary>
             Remove pre register action
             </summary>
             <param name="key"></param>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.RemovePostRegister(System.String)">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.RemovePostRegister(System.String)">
             <summary>
             Remove post register action
             </summary>
             <param name="key"></param>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.Dispose(System.Boolean)">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.Dispose(System.Boolean)">
             <summary>
             Dispose
             </summary>
             <param name="disposing"></param>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyProxyRegister`1.Dispose">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister`1.Dispose">
             <inheritdoc />
         </member>
-        <member name="T:Cosmos.Extensions.Dependency.Core.DependencyProxyType">
+        <member name="T:Cosmos.Dependency.DependencyProxyType">
             <summary>
             Register proxy type
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyProxyType.TypeToType">
+        <member name="F:Cosmos.Dependency.DependencyProxyType.TypeToType">
             <summary>
             Type to type
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyProxyType.TypeToInstance">
+        <member name="F:Cosmos.Dependency.DependencyProxyType.TypeToInstance">
             <summary>
             Type to instance
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyProxyType.TypeToInstanceFunc">
+        <member name="F:Cosmos.Dependency.DependencyProxyType.TypeToInstanceFunc">
             <summary>
             Type to instance func
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyProxyType.TypeToResolvedInstanceFunc">
+        <member name="F:Cosmos.Dependency.DependencyProxyType.TypeToResolvedInstanceFunc">
             <summary>
             Type to resolved instance func
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyProxyType.TypeSelf">
+        <member name="F:Cosmos.Dependency.DependencyProxyType.TypeSelf">
             <summary>
             Type self
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyProxyType.InstanceSelf">
+        <member name="F:Cosmos.Dependency.DependencyProxyType.InstanceSelf">
             <summary>
             Instance self
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyProxyType.InstanceSelfFunc">
+        <member name="F:Cosmos.Dependency.DependencyProxyType.InstanceSelfFunc">
             <summary>
             Instance self func
             </summary>
         </member>
-        <member name="F:Cosmos.Extensions.Dependency.Core.DependencyProxyType.ResolvedInstanceSelfFunc">
+        <member name="F:Cosmos.Dependency.DependencyProxyType.ResolvedInstanceSelfFunc">
             <summary>
             Resolved instance selft func
             </summary>
         </member>
-        <member name="T:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor">
+        <member name="T:Cosmos.Dependency.DependencyRegisterDescriptor">
             <summary>
             Register proxy descriptor
             </summary>
         </member>
-        <member name="P:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.ServiceType">
+        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ServiceType">
             <summary>
             Service type
             </summary>
         </member>
-        <member name="P:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.ImplementationType">
+        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ImplementationType">
             <summary>
             Implementation type
             </summary>
         </member>
-        <member name="P:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.ImplementationTypeSelf">
+        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ImplementationTypeSelf">
             <summary>
             Implementation type self
             </summary>
         </member>
-        <member name="P:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.InstanceOfImplementation">
+        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.InstanceOfImplementation">
             <summary>
             Instance of implementation
             </summary>
         </member>
-        <member name="P:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.InstanceFuncForImplementation">
+        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.InstanceFuncForImplementation">
             <summary>
             Instance func for implementation
             </summary>
         </member>
-        <member name="P:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.ProxyType">
+        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ResolveFuncForImplementation">
+            <summary>
+            Instance func for implementation
+            </summary>
+        </member>
+        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ProxyType">
             <summary>
             Proxy type
             </summary>
         </member>
-        <member name="P:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.LifetimeType">
+        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.LifetimeType">
             <summary>
             Lifetime type
             </summary>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``2(Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForService``2(Cosmos.Dependency.DependencyLifetimeType)">
             <summary>
             Create
             </summary>
@@ -209,7 +214,7 @@
             <param name="lifetimeType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``2(``1,Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForService``2(``1,Cosmos.Dependency.DependencyLifetimeType)">
             <summary>
             Create
             </summary>
@@ -219,7 +224,7 @@
             <param name="lifetimeType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``1(System.Object,Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForService``1(System.Object,Cosmos.Dependency.DependencyLifetimeType)">
             <summary>
             Create
             </summary>
@@ -228,7 +233,7 @@
             <param name="lifetimeType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``1(Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForInstanceSelf``1(Cosmos.Dependency.DependencyLifetimeType)">
             <summary>
             Create
             </summary>
@@ -236,7 +241,7 @@
             <param name="lifetimeType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create(System.Type,System.Type,Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForType(System.Type,System.Type,Cosmos.Dependency.DependencyLifetimeType)">
             <summary>
             Create
             </summary>
@@ -245,7 +250,7 @@
             <param name="lifetimeType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create(System.Object,System.Type,Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForObject(System.Object,System.Type,Cosmos.Dependency.DependencyLifetimeType)">
             <summary>
             Create
             </summary>
@@ -254,66 +259,7 @@
             <param name="lifetimeType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``2(System.Func{``1},Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TImplementation"></typeparam>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``3(System.Func{``1,``2},Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <typeparam name="TImplementation"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``1(System.Func{System.Object},Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TService"></typeparam>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``2(System.Func{``1,System.Object},Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``1(System.Func{``0},Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TImplementation"></typeparam>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``2(System.Func{``0,``1},Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <typeparam name="TResolver"></typeparam>
-            <typeparam name="TImplementation"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create(System.Func{System.Object},System.Type,Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForObjectDelegate(System.Func{System.Object},System.Type,Cosmos.Dependency.DependencyLifetimeType)">
             <summary>
             Create
             </summary>
@@ -322,27 +268,81 @@
             <param name="lifetimeType"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor.Create``1(System.Func{``0,System.Object},System.Type,Cosmos.Extensions.Dependency.Core.DependencyLifetimeType)">
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForServiceDelegate``2(System.Func{``1},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForResolvedServiceDelegate``2(System.Func{Cosmos.Dependency.IDefinedResolver,``1},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForServiceDelegate``1(System.Func{System.Object},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForResolvedServiceDelegate``1(System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForInstanceDelegate``1(System.Func{``0},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TImplementation"></typeparam>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForResolvedInstanceDelegate``1(System.Func{Cosmos.Dependency.IDefinedResolver,``0},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <typeparam name="TImplementation"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForInstanceDelegate(System.Func{System.Object},System.Type,Cosmos.Dependency.DependencyLifetimeType)">
             <summary>
             Create
             </summary>
             <param name="instanceFunc"></param>
             <param name="implementationType"></param>
             <param name="lifetimeType"></param>
-            <typeparam name="TResolver"></typeparam>
             <returns></returns>
         </member>
-        <member name="T:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor`1">
+        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForResolvedObjectDelegate(System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},System.Type,Cosmos.Dependency.DependencyLifetimeType)">
             <summary>
-            Register proxy descriptor
+            Create
             </summary>
+            <param name="instanceFunc"></param>
+            <param name="implementationType"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
         </member>
-        <member name="P:Cosmos.Extensions.Dependency.Core.DependencyRegisterDescriptor`1.ResolveFuncForImplementation">
-            <summary>
-            Instance func for implementation
-            </summary>
-        </member>
-        <member name="T:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions">
+        <member name="T:Cosmos.Dependency.RegisterProxyBagExtensions">
             <summary>
             Extensions for Register proxy bag
             </summary>
@@ -353,7 +353,7 @@
             Extensions for Register proxy bag
             </summary>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Add Scoped
             </summary>
@@ -363,7 +363,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``1)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Dependency.DependencyProxyRegister,``1)">
             <summary>
             Add Scoped
             </summary>
@@ -374,7 +374,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{``1})">
             <summary>
             Add Scoped
             </summary>
@@ -385,29 +385,18 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``3(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``2})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``1})">
             <summary>
             Add Scoped
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``0)">
-            <summary>
-            Add Scoped
-            </summary>
-            <param name="bag"></param>
-            <param name="implementation"></param>
-            <typeparam name="TService"></typeparam>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{``0})">
             <summary>
             Add Scoped
             </summary>
@@ -417,7 +406,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object})">
             <summary>
             Add Scoped
             </summary>
@@ -427,60 +416,36 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
             <summary>
             Add Scoped
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,System.Object})">
-            <summary>
-            Add Scoped
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,``1})">
-            <summary>
-            Add Scoped
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},System.Type)">
             <summary>
             Add Scoped
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <param name="implementationType"></param>
-            <typeparam name="TResolver"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped``1(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Add Scoped
             </summary>
             <param name="bag"></param>
-            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementationSelf"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Type,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped(Cosmos.Dependency.DependencyProxyRegister,System.Type,System.Type)">
             <summary>
             Add Scoped
             </summary>
@@ -490,7 +455,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Object,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped(Cosmos.Dependency.DependencyProxyRegister,System.Object,System.Type)">
             <summary>
             Add Scoped
             </summary>
@@ -500,7 +465,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddScoped(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScoped(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object},System.Type)">
             <summary>
             Add Scoped
             </summary>
@@ -510,7 +475,37 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScopedService``1(Cosmos.Dependency.DependencyProxyRegister,``0)">
+            <summary>
+            Add Scoped
+            </summary>
+            <param name="bag"></param>
+            <param name="implementation"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScopedService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
+            <summary>
+            Add Scoped
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddScopedService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object})">
+            <summary>
+            Add Scoped
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Try add Scoped
             </summary>
@@ -519,7 +514,7 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``1)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Dependency.DependencyProxyRegister,``1)">
             <summary>
             Try add Scoped
             </summary>
@@ -529,7 +524,7 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{``1})">
             <summary>
             Try add Scoped
             </summary>
@@ -539,28 +534,18 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``3(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``2})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``1})">
             <summary>
             Try add Scoped
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``0)">
-            <summary>
-            Try add Scoped
-            </summary>
-            <param name="bag"></param>
-            <param name="implementation"></param>
-            <typeparam name="TService"></typeparam>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{``0})">
             <summary>
             Try add Scoped
             </summary>
@@ -569,7 +554,7 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object})">
             <summary>
             Try add Scoped
             </summary>
@@ -578,55 +563,33 @@
             <typeparam name="TService"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped``1(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Try add Scoped
             </summary>
             <param name="bag"></param>
-            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementationSelf"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
             <summary>
             Try add Scoped
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,System.Object})">
-            <summary>
-            Try add Scoped
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,``1})">
-            <summary>
-            Try add Scoped
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},System.Type)">
             <summary>
             Try add Scoped
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <param name="implementationType"></param>
-            <typeparam name="TResolver"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Type,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped(Cosmos.Dependency.DependencyProxyRegister,System.Type,System.Type)">
             <summary>
             Try add Scoped
             </summary>
@@ -636,7 +599,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Object,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped(Cosmos.Dependency.DependencyProxyRegister,System.Object,System.Type)">
             <summary>
             Try add Scoped
             </summary>
@@ -645,7 +608,7 @@
             <param name="implementationType"></param>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddScoped(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScoped(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object},System.Type)">
             <summary>
             Try add Scoped
             </summary>
@@ -654,7 +617,34 @@
             <param name="implementationType"></param>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScopedService``1(Cosmos.Dependency.DependencyProxyRegister,``0)">
+            <summary>
+            Try add Scoped
+            </summary>
+            <param name="bag"></param>
+            <param name="implementation"></param>
+            <typeparam name="TService"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScopedService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
+            <summary>
+            Try add Scoped
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddScopedService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object})">
+            <summary>
+            Try add Scoped
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Add singleton
             </summary>
@@ -664,7 +654,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``1)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Dependency.DependencyProxyRegister,``1)">
             <summary>
             Add singleton
             </summary>
@@ -675,7 +665,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{``1})">
             <summary>
             Add singleton
             </summary>
@@ -686,29 +676,18 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``3(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``2})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``1})">
             <summary>
             Add singleton
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``0)">
-            <summary>
-            Add singleton
-            </summary>
-            <param name="bag"></param>
-            <param name="implementation"></param>
-            <typeparam name="TService"></typeparam>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{``0})">
             <summary>
             Add Singleton
             </summary>
@@ -718,7 +697,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object})">
             <summary>
             Add singleton
             </summary>
@@ -728,60 +707,36 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
             <summary>
             Add Singleton
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,System.Object})">
-            <summary>
-            Add Singleton
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,``1})">
-            <summary>
-            Add Singleton
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},System.Type)">
             <summary>
             Add Singleton
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <param name="implementationType"></param>
-            <typeparam name="TResolver"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton``1(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Add singleton
             </summary>
             <param name="bag"></param>
-            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementationSelf"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Type,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton(Cosmos.Dependency.DependencyProxyRegister,System.Type,System.Type)">
             <summary>
             Add Singleton
             </summary>
@@ -791,7 +746,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Object,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton(Cosmos.Dependency.DependencyProxyRegister,System.Object,System.Type)">
             <summary>
             Add singleton
             </summary>
@@ -801,7 +756,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddSingleton(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingleton(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object},System.Type)">
             <summary>
             Add singleton
             </summary>
@@ -811,7 +766,37 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingletonService``1(Cosmos.Dependency.DependencyProxyRegister,``0)">
+            <summary>
+            Add singleton
+            </summary>
+            <param name="bag"></param>
+            <param name="implementation"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingletonService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
+            <summary>
+            Add Singleton
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddSingletonService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object})">
+            <summary>
+            Add Singleton
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Try add Singleton
             </summary>
@@ -820,7 +805,7 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``1)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Dependency.DependencyProxyRegister,``1)">
             <summary>
             Try add Singleton
             </summary>
@@ -830,7 +815,7 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{``1})">
             <summary>
             Try add Singleton
             </summary>
@@ -840,28 +825,18 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``3(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``2})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``1})">
             <summary>
             Try add Singleton
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``0)">
-            <summary>
-            Try add Singleton
-            </summary>
-            <param name="bag"></param>
-            <param name="implementation"></param>
-            <typeparam name="TService"></typeparam>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{``0})">
             <summary>
             Try add Singleton
             </summary>
@@ -870,7 +845,7 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object})">
             <summary>
             Try add Singleton
             </summary>
@@ -879,55 +854,33 @@
             <typeparam name="TService"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
             <summary>
             Try add Singleton
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,System.Object})">
-            <summary>
-            Try add Singleton
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,``1})">
-            <summary>
-            Try add Singleton
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},System.Type)">
             <summary>
             Try add Singleton
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <param name="implementationType"></param>
-            <typeparam name="TResolver"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton``1(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Try add Singleton
             </summary>
             <param name="bag"></param>
-            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementationSelf"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Type,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton(Cosmos.Dependency.DependencyProxyRegister,System.Type,System.Type)">
             <summary>
             Try add Singleton
             </summary>
@@ -937,7 +890,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Object,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton(Cosmos.Dependency.DependencyProxyRegister,System.Object,System.Type)">
             <summary>
             Try add Singleton
             </summary>
@@ -946,7 +899,7 @@
             <param name="implementationType"></param>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddSingleton(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingleton(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object},System.Type)">
             <summary>
             Try add Singleton
             </summary>
@@ -955,7 +908,34 @@
             <param name="implementationType"></param>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingletonService``1(Cosmos.Dependency.DependencyProxyRegister,``0)">
+            <summary>
+            Try add Singleton
+            </summary>
+            <param name="bag"></param>
+            <param name="implementation"></param>
+            <typeparam name="TService"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingletonService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
+            <summary>
+            Try add Singleton
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddSingletonService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object})">
+            <summary>
+            Try add Singleton
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Add Transient
             </summary>
@@ -965,7 +945,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``1)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Dependency.DependencyProxyRegister,``1)">
             <summary>
             Add Transient
             </summary>
@@ -976,7 +956,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{``1})">
             <summary>
             Add Transient
             </summary>
@@ -987,29 +967,18 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``3(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``2})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``1})">
             <summary>
             Add Transient
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``0)">
-            <summary>
-            Add Transient
-            </summary>
-            <param name="bag"></param>
-            <param name="implementation"></param>
-            <typeparam name="TService"></typeparam>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{``0})">
             <summary>
             Add Transient
             </summary>
@@ -1019,7 +988,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object})">
             <summary>
             Add Transient
             </summary>
@@ -1029,60 +998,36 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
             <summary>
             Add Transient
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,System.Object})">
-            <summary>
-            Add Transient
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <returns></returns>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,``1})">
-            <summary>
-            Add Transient
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},System.Type)">
             <summary>
             Add Transient
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <param name="implementationType"></param>
-            <typeparam name="TResolver"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient``1(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Add Transient
             </summary>
             <param name="bag"></param>
-            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementationSelf"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Type,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient(Cosmos.Dependency.DependencyProxyRegister,System.Type,System.Type)">
             <summary>
             Add Transient
             </summary>
@@ -1092,7 +1037,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Object,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient(Cosmos.Dependency.DependencyProxyRegister,System.Object,System.Type)">
             <summary>
             Add Transient
             </summary>
@@ -1102,7 +1047,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.AddTransient(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransient(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object},System.Type)">
             <summary>
             Add Transient
             </summary>
@@ -1112,7 +1057,37 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransientService``1(Cosmos.Dependency.DependencyProxyRegister,``0)">
+            <summary>
+            Add Transient
+            </summary>
+            <param name="bag"></param>
+            <param name="implementation"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransientService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
+            <summary>
+            Add Transient
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.AddTransientService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object})">
+            <summary>
+            Add Transient
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Try add Transient
             </summary>
@@ -1121,7 +1096,7 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``1)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Dependency.DependencyProxyRegister,``1)">
             <summary>
             Try add Transient
             </summary>
@@ -1131,7 +1106,7 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{``1})">
             <summary>
             Try add Transient
             </summary>
@@ -1141,28 +1116,18 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``3(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``2})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``1})">
             <summary>
             Try add Transient
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,``0)">
-            <summary>
-            Try add Transient
-            </summary>
-            <param name="bag"></param>
-            <param name="implementation"></param>
-            <typeparam name="TService"></typeparam>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{``0})">
             <summary>
             Try add Transient
             </summary>
@@ -1171,7 +1136,7 @@
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object})">
             <summary>
             Try add Transient
             </summary>
@@ -1180,55 +1145,33 @@
             <typeparam name="TService"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,``0})">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
             <summary>
             Try add Transient
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``1,System.Object})">
-            <summary>
-            Try add Transient
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TResolver"></typeparam>
-            <exception cref="T:System.ArgumentNullException"></exception>
-        </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``2(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,``1})">
-            <summary>
-            Try add Transient
-            </summary>
-            <param name="bag"></param>
-            <param name="implementationFunc"></param>
-            <typeparam name="TResolver"></typeparam>
             <typeparam name="TImplementation"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{``0,System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},System.Type)">
             <summary>
             Try add Transient
             </summary>
             <param name="bag"></param>
             <param name="implementationFunc"></param>
             <param name="implementationType"></param>
-            <typeparam name="TResolver"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient``1(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient``1(Cosmos.Dependency.DependencyProxyRegister)">
             <summary>
             Try add Transient
             </summary>
             <param name="bag"></param>
-            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementationSelf"></typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Type,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient(Cosmos.Dependency.DependencyProxyRegister,System.Type,System.Type)">
             <summary>
             Try add Transient
             </summary>
@@ -1238,7 +1181,7 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Object,System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient(Cosmos.Dependency.DependencyProxyRegister,System.Object,System.Type)">
             <summary>
             Try add Transient
             </summary>
@@ -1247,7 +1190,7 @@
             <param name="implementationType"></param>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Cosmos.Extensions.Dependency.RegisterProxyBagExtensions.TryAddTransient(Cosmos.Extensions.Dependency.Core.DependencyProxyRegister,System.Func{System.Object},System.Type)">
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransient(Cosmos.Dependency.DependencyProxyRegister,System.Func{System.Object},System.Type)">
             <summary>
             Try add Transient
             </summary>
@@ -1255,6 +1198,80 @@
             <param name="implementationFunc"></param>
             <param name="implementationType"></param>
             <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransientService``1(Cosmos.Dependency.DependencyProxyRegister,``0)">
+            <summary>
+            Try add Transient
+            </summary>
+            <param name="bag"></param>
+            <param name="implementation"></param>
+            <typeparam name="TService"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransientService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,``0})">
+            <summary>
+            Try add Transient
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Dependency.RegisterProxyBagExtensions.TryAddTransientService``1(Cosmos.Dependency.DependencyProxyRegister,System.Func{Cosmos.Dependency.IDefinedResolver,System.Object})">
+            <summary>
+            Try add Transient
+            </summary>
+            <param name="bag"></param>
+            <param name="implementationFunc"></param>
+            <typeparam name="TService"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Cosmos.Dependency.IDefinedResolver">
+            <summary>
+            Interface for service resolver
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.IDefinedResolver.Resolve(System.Type)">
+            <summary>
+            Resolve
+            </summary>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDefinedResolver.Resolve``1">
+            <summary>
+            Resolve
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDefinedResolver.RequiredResolve(System.Type)">
+            <summary>
+            Required resolve
+            </summary>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDefinedResolver.RequiredResolve``1">
+            <summary>
+            Required resolve
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDefinedResolver.ResolveMany(System.Type)">
+            <summary>
+            Resolve many
+            </summary>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDefinedResolver.ResolveMany``1">
+            <summary>
+            Resolve many
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
         </member>
     </members>
 </doc>

@@ -4,6 +4,7 @@
 
     <PropertyGroup>
         <TargetFrameworks>netcoreapp3.1;netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
+        <RootNamespace />
     </PropertyGroup>
 
     <PropertyGroup>
@@ -13,7 +14,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Cosmos.Standard" Version="0.1.3" />
+      <PackageReference Include="Cosmos.Standard" Version="0.1.4.4-alpha1-100901" />
     </ItemGroup>
 
 </Project>

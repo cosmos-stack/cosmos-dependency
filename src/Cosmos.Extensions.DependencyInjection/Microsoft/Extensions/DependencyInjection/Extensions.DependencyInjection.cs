@@ -1,12 +1,13 @@
 ﻿using System;
-using Cosmos.Extensions.Dependency;
-using Cosmos.Extensions.Dependency.Core;
+using Cosmos.Dependency;
 
-namespace Microsoft.Extensions.DependencyInjection {
+namespace Microsoft.Extensions.DependencyInjection
+{
     /// <summary>
     /// Extensions for Dependency Injection
     /// </summary>
-    public static class DependencyInjectionExtensions {
+    public static class DependencyInjectionExtensions
+    {
         /// <summary>
         /// Add Register Proxy
         /// </summary>
@@ -14,15 +15,19 @@ namespace Microsoft.Extensions.DependencyInjection {
         /// <param name="bag"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static IServiceCollection AddRegisterProxyFrom(this IServiceCollection services, DependencyProxyRegister bag) {
+        public static IServiceCollection AddRegisterProxyFrom(this IServiceCollection services, DependencyProxyRegister bag)
+        {
             if (services == null)
                 throw new ArgumentNullException(nameof(services));
 
-            if (bag != null) {
+            if (bag != null)
+            {
                 var descriptors = bag.ExportDescriptors();
 
-                foreach (var descriptor in descriptors) {
-                    switch (descriptor.ProxyType) {
+                foreach (var descriptor in descriptors)
+                {
+                    switch (descriptor.ProxyType)
+                    {
                         case DependencyProxyType.TypeToType:
                             TypeToTypeRegister(services, descriptor);
                             break;
@@ -61,9 +66,11 @@ namespace Microsoft.Extensions.DependencyInjection {
             return services;
         }
 
-        private static void TypeToTypeRegister(IServiceCollection services, DependencyRegisterDescriptor d) {
+        private static void TypeToTypeRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        {
             var lifetime = d.LifetimeType.ToMsLifetime();
-            switch (lifetime) {
+            switch (lifetime)
+            {
                 case ServiceLifetime.Scoped:
                     services.AddScoped(d.ServiceType, d.ImplementationType);
                     break;
@@ -82,9 +89,11 @@ namespace Microsoft.Extensions.DependencyInjection {
             }
         }
 
-        private static void TypeToInstanceRegister(IServiceCollection services, DependencyRegisterDescriptor d) {
+        private static void TypeToInstanceRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        {
             var lifetime = d.LifetimeType.ToMsLifetime();
-            switch (lifetime) {
+            switch (lifetime)
+            {
                 case ServiceLifetime.Singleton:
                     services.AddSingleton(d.ServiceType, d.InstanceOfImplementation);
                     break;
@@ -94,9 +103,11 @@ namespace Microsoft.Extensions.DependencyInjection {
             }
         }
 
-        private static void TypeToInstanceFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d) {
+        private static void TypeToInstanceFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        {
             var lifetime = d.LifetimeType.ToMsLifetime();
-            switch (lifetime) {
+            switch (lifetime)
+            {
                 case ServiceLifetime.Scoped:
                     services.AddScoped(d.ServiceType, p => d.InstanceFuncForImplementation());
                     break;
@@ -115,9 +126,11 @@ namespace Microsoft.Extensions.DependencyInjection {
             }
         }
 
-        private static void TypeSelfRegister(IServiceCollection services, DependencyRegisterDescriptor d) {
+        private static void TypeSelfRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        {
             var lifetime = d.LifetimeType.ToMsLifetime();
-            switch (lifetime) {
+            switch (lifetime)
+            {
                 case ServiceLifetime.Scoped:
                     services.AddScoped(d.ImplementationTypeSelf);
                     break;
@@ -136,9 +149,11 @@ namespace Microsoft.Extensions.DependencyInjection {
             }
         }
 
-        private static void InstanceSelfRegister(IServiceCollection services, DependencyRegisterDescriptor d) {
+        private static void InstanceSelfRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        {
             var lifetime = d.LifetimeType.ToMsLifetime();
-            switch (lifetime) {
+            switch (lifetime)
+            {
                 case ServiceLifetime.Singleton:
                     services.AddSingleton(d.InstanceOfImplementation);
                     break;
@@ -148,17 +163,19 @@ namespace Microsoft.Extensions.DependencyInjection {
             }
         }
 
-        private static void InstanceSelfFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d) {
+        private static void InstanceSelfFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        {
             var lifetime = d.LifetimeType.ToMsLifetime();
-            switch (lifetime) {
+            switch (lifetime)
+            {
                 case ServiceLifetime.Scoped:
                     services.AddScoped(p => d.InstanceFuncForImplementation());
                     break;
-                
+
                 case ServiceLifetime.Singleton:
                     services.AddSingleton(p => d.InstanceFuncForImplementation());
                     break;
-                
+
                 case ServiceLifetime.Transient:
                     services.AddTransient(p => d.InstanceFuncForImplementation());
                     break;
@@ -169,49 +186,49 @@ namespace Microsoft.Extensions.DependencyInjection {
             }
         }
 
-        private static void TypeToResolvedInstanceFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d) {
-            if (d is DependencyRegisterDescriptor<IServiceProvider> d0) {
-                var lifetime = d0.LifetimeType.ToMsLifetime();
-                switch (lifetime) {
-                    case ServiceLifetime.Scoped:
-                        services.AddScoped(d0.ServiceType, p => d0.ResolveFuncForImplementation(p));
-                        break;
+        private static void TypeToResolvedInstanceFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        {
+            var lifetime = d.LifetimeType.ToMsLifetime();
+            switch (lifetime)
+            {
+                case ServiceLifetime.Scoped:
+                    services.AddScoped(d.ServiceType, p => d.ResolveFuncForImplementation(p.ToAbstract()));
+                    break;
 
-                    case ServiceLifetime.Singleton:
-                        services.AddSingleton(d0.ServiceType, p => d0.ResolveFuncForImplementation(p));
-                        break;
+                case ServiceLifetime.Singleton:
+                    services.AddSingleton(d.ServiceType, p => d.ResolveFuncForImplementation(p.ToAbstract()));
+                    break;
 
-                    case ServiceLifetime.Transient:
-                        services.AddTransient(d0.ServiceType, p => d0.ResolveFuncForImplementation(p));
-                        break;
+                case ServiceLifetime.Transient:
+                    services.AddTransient(d.ServiceType, p => d.ResolveFuncForImplementation(p.ToAbstract()));
+                    break;
 
-                    default:
-                        services.AddTransient(d0.ServiceType, p => d0.ResolveFuncForImplementation(p));
-                        break;
-                }
+                default:
+                    services.AddTransient(d.ServiceType, p => d.ResolveFuncForImplementation(p.ToAbstract()));
+                    break;
             }
         }
 
-        private static void ResolvedInstanceSelfFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d) {
-            if (d is DependencyRegisterDescriptor<IServiceProvider> d0) {
-                var lifetime = d0.LifetimeType.ToMsLifetime();
-                switch (lifetime) {
-                    case ServiceLifetime.Scoped:
-                        services.AddScoped(p => d0.ResolveFuncForImplementation(p));
-                        break;
-                    
-                    case ServiceLifetime.Singleton:
-                        services.AddSingleton(p => d0.ResolveFuncForImplementation(p));
-                        break;
-                    
-                    case ServiceLifetime.Transient:
-                        services.AddTransient(p => d0.ResolveFuncForImplementation(p));
-                        break;
-                    
-                    default:
-                        services.AddTransient(p => d0.ResolveFuncForImplementation(p));
-                        break;
-                }
+        private static void ResolvedInstanceSelfFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        {
+            var lifetime = d.LifetimeType.ToMsLifetime();
+            switch (lifetime)
+            {
+                case ServiceLifetime.Scoped:
+                    services.AddScoped(p => d.ResolveFuncForImplementation(p.ToAbstract()));
+                    break;
+
+                case ServiceLifetime.Singleton:
+                    services.AddSingleton(p => d.ResolveFuncForImplementation(p.ToAbstract()));
+                    break;
+
+                case ServiceLifetime.Transient:
+                    services.AddTransient(p => d.ResolveFuncForImplementation(p.ToAbstract()));
+                    break;
+
+                default:
+                    services.AddTransient(p => d.ResolveFuncForImplementation(p.ToAbstract()));
+                    break;
             }
         }
     }

@@ -4,6 +4,7 @@
 
     <PropertyGroup>
         <TargetFrameworks>netcoreapp3.1;netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
+        <RootNamespace />
     </PropertyGroup>
 
     <PropertyGroup>
@@ -12,16 +13,16 @@
         <Description>Extensions of IOC component AspectCore-Framework inner Injector Container for Cosmos base library</Description>
     </PropertyGroup>
 
-    <ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)'!='net451'">
+        <PackageReference Include="AspectCore.Abstractions" Version="2.1.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)'=='net451'">
         <PackageReference Include="AspectCore.Abstractions" Version="2.0.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Cosmos.Extensions.Dependency.Core\Cosmos.Extensions.Dependency.Core.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Cosmos\Extensions" />
+        <ProjectReference Include="..\Cosmos.Extensions.Dependency.Core\Cosmos.Extensions.Dependency.Core.csproj" />
     </ItemGroup>
 
 </Project>
