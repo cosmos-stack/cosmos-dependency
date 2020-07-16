@@ -1,4 +1,4 @@
-# COSMOSLOOPS/Cosmos.Dependency
+# COSMOSLOOPS/Dependency
 
 Cosmos.Dependency extensions is an inline common project of [COSMOS LOOPS PROGRAMME](https://github.com/cosmos-loops).
 

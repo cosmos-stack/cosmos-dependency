@@ -1,12 +1,12 @@
 <Project>
 	<PropertyGroup Label="Package">
-		<Product>Cosmos.Extensions</Product>
-		<Authors>AlexLEWIS;dotnetcore;StarrySky;Cosmos</Authors>
+		<Product>Cosmos.Dependency</Product>
+		<Authors>AlexLEWIS;Cosmos</Authors>
 		<RepositoryUrl>https://github.com/cosmos-loops/cosmos-dependency</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageProjectUrl>https://github.com/cosmos-loops/cosmos-dependency</PackageProjectUrl>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageTags>StarrySky;Cosmos;Dependency</PackageTags>
+		<PackageTags>Cosmos;Cosmosloops;Dependency</PackageTags>
 	</PropertyGroup>
 </Project>

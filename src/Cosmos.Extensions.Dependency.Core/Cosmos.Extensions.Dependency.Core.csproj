@@ -1,11 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="..\..\build\common.props" />
-
-    <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1;netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
-        <RootNamespace />
-    </PropertyGroup>
+    <Import Project="..\..\common.props" />
 
     <PropertyGroup>
         <AssemblyName>Cosmos.Extensions.Dependency.Core</AssemblyName>
@@ -14,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Cosmos.Standard" Version="0.1.4.4-alpha2-201012" />
+      <PackageReference Include="Cosmos.Standard" Version="0.1.4.5" />
     </ItemGroup>
 
 </Project>
