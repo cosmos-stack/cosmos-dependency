@@ -36,6 +36,28 @@ namespace Cosmos.Dependency
         }
 
         /// <summary>
+        /// Is registered
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public virtual bool IsRegistered(Type type)
+        {
+            return type != null &&
+                   _descriptors.Any(x => x.RegisterType == type);
+        }
+
+        /// <summary>
+        /// Is registered
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public virtual bool IsRegistered<T>()
+        {
+            var type = typeof(T);
+            return _descriptors.Any(x => x.RegisterType == type);
+        }
+
+        /// <summary>
         /// Export Descriptors
         /// </summary>
         /// <returns></returns>
