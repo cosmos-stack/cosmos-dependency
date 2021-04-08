@@ -8,13 +8,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{2A
 ProjectSection(SolutionItems) = preProject
 	.gitignore = .gitignore
 	LICENSE = LICENSE
-	NuGet.config = NuGet.config
 	common.props = common.props
 	common.tests.props = common.tests.props
 	logo.png = logo.png
+	asset\version.dev.props = asset\version.dev.props
+	asset\version.props = asset\version.props
 EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Dependency.Core", "src\Cosmos.Extensions.Dependency.Core\Cosmos.Extensions.Dependency.Core.csproj", "{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Dependency", "src\Cosmos.Extensions.Dependency\Cosmos.Extensions.Dependency.csproj", "{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.DependencyInjection", "src\Cosmos.Extensions.DependencyInjection\Cosmos.Extensions.DependencyInjection.csproj", "{14F856A8-63A8-46D1-BF1E-876EFEE9901D}"
 EndProject
@@ -23,8 +24,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.AspectCoreInjector", "src\Cosmos.Extensions.AspectCoreInjector\Cosmos.Extensions.AspectCoreInjector.csproj", "{DC1B514F-6CA1-40DB-807D-467631A0F057}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{21E1C850-DEF5-44E2-AFB9-0815927B50DA}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "impl", "impl", "{DB817212-89B9-4956-BB92-BE7DBBC657E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyTests", "tests\DependencyTests\DependencyTests.csproj", "{B9DC84C5-30BA-442D-A0C9-2829E8E3FD84}"
 EndProject
@@ -35,9 +34,9 @@ EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{582A2225-25E5-4EF6-8BEC-36B8BB4F48EF}"
 ProjectSection(SolutionItems) = preProject
-	build\Publish.bat = build\Publish.bat
-	build\PublishToAlexinea.bat = build\PublishToAlexinea.bat
-	build\PublishToMyGet.bat = build\PublishToMyGet.bat
+	build\PublishBetaVersion_Script.bat = build\PublishBetaVersion_Script.bat
+	build\PublishNightlyVersion_Script.bat = build\PublishNightlyVersion_Script.bat
+	build\PublishReleaseVersion_Script.bat = build\PublishReleaseVersion_Script.bat
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asset", "asset", "{ACDDCC03-48FE-4922-878F-5DEA5EB9E77A}"
@@ -52,7 +51,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "props", "props", "{8CFC4169
 ProjectSection(SolutionItems) = preProject
 	asset\props\misc.props = asset\props\misc.props
 	asset\props\package.props = asset\props\package.props
-	asset\props\version.props = asset\props\version.props
 EndProjectSection
 EndProject
 Global
@@ -62,14 +60,13 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{21E1C850-DEF5-44E2-AFB9-0815927B50DA} = {9F8667D6-DC70-4CB3-9DA1-42406A08D262}
-		{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0} = {21E1C850-DEF5-44E2-AFB9-0815927B50DA}
-		{DB817212-89B9-4956-BB92-BE7DBBC657E8} = {9F8667D6-DC70-4CB3-9DA1-42406A08D262}
-		{DC1B514F-6CA1-40DB-807D-467631A0F057} = {DB817212-89B9-4956-BB92-BE7DBBC657E8}
-		{A2CB6EF9-064A-4209-B9C4-2A3733E074A8} = {DB817212-89B9-4956-BB92-BE7DBBC657E8}
-		{14F856A8-63A8-46D1-BF1E-876EFEE9901D} = {DB817212-89B9-4956-BB92-BE7DBBC657E8}
 		{B9DC84C5-30BA-442D-A0C9-2829E8E3FD84} = {682DBB20-DD52-4F66-AC0D-77DB7174C290}
 		{A4C1C0B0-55E1-4EAE-A566-2A9E583DD4C7} = {ACDDCC03-48FE-4922-878F-5DEA5EB9E77A}
 		{8CFC4169-3A7E-4F0B-8509-9C50A088B6D3} = {ACDDCC03-48FE-4922-878F-5DEA5EB9E77A}
+		{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0} = {21E1C850-DEF5-44E2-AFB9-0815927B50DA}
+		{DC1B514F-6CA1-40DB-807D-467631A0F057} = {9F8667D6-DC70-4CB3-9DA1-42406A08D262}
+		{A2CB6EF9-064A-4209-B9C4-2A3733E074A8} = {9F8667D6-DC70-4CB3-9DA1-42406A08D262}
+		{14F856A8-63A8-46D1-BF1E-876EFEE9901D} = {9F8667D6-DC70-4CB3-9DA1-42406A08D262}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
