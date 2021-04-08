@@ -7,15 +7,15 @@ namespace Cosmos.Dependency
     /// <summary>
     /// Register proxy bag
     /// </summary>
-    public abstract class DependencyProxyRegister
+    public abstract class DependencyProxyRegister : IDependencyProxyRegister
     {
-        private readonly List<DependencyRegisterDescriptor> _descriptors = new List<DependencyRegisterDescriptor>();
+        private readonly List<DependencyProxyDescriptor> _descriptors = new List<DependencyProxyDescriptor>();
 
         /// <summary>
         /// Register
         /// </summary>
         /// <param name="descriptor"></param>
-        public void Register(DependencyRegisterDescriptor descriptor)
+        public void Register(DependencyProxyDescriptor descriptor)
         {
             if (descriptor is null)
                 throw new ArgumentNullException(nameof(descriptor));
@@ -26,7 +26,7 @@ namespace Cosmos.Dependency
         /// Try register
         /// </summary>
         /// <param name="descriptor"></param>
-        public void TryRegister(DependencyRegisterDescriptor descriptor)
+        public void TryRegister(DependencyProxyDescriptor descriptor)
         {
             if (descriptor is null)
                 return;
@@ -58,9 +58,38 @@ namespace Cosmos.Dependency
         }
 
         /// <summary>
+        /// Is registered
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="lifetimeType"></param>
+        /// <returns></returns>
+        public virtual bool IsRegistered(Type type, DependencyLifetimeType lifetimeType)
+        {
+            return type != null &&
+                   _descriptors.Any(x => x.RegisterType == type && x.LifetimeType == lifetimeType);
+        }
+
+        /// <summary>
+        /// Is registered
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="lifetimeType"></param>
+        /// <returns></returns>
+        public virtual bool IsRegistered<T>(DependencyLifetimeType lifetimeType)
+        {
+            var type = typeof(T);
+            return _descriptors.Any(x => x.RegisterType == type && x.LifetimeType == lifetimeType);
+        }
+
+        /// <summary>
         /// Export Descriptors
         /// </summary>
         /// <returns></returns>
-        public IReadOnlyList<DependencyRegisterDescriptor> ExportDescriptors() => _descriptors.AsReadOnly();
+        public IReadOnlyList<DependencyProxyDescriptor> ExportDescriptors() => _descriptors.AsReadOnly();
+
+        /// <summary>
+        /// Dispose
+        /// </summary>
+        public abstract void Dispose();
     }
 }

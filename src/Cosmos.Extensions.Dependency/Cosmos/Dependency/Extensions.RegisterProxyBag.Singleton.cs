@@ -1,6 +1,5 @@
 using System;
 using R = Cosmos.Dependency.DependencyProxyRegister;
-using D = Cosmos.Dependency.DependencyRegisterDescriptor;
 
 namespace Cosmos.Dependency
 {
@@ -22,7 +21,7 @@ namespace Cosmos.Dependency
         public static R AddSingleton<TService, TImplementation>(this R bag)
         {
             bag.CheckNull(nameof(bag));
-            bag.Register(D.CreateForService<TService, TImplementation>(DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForService<TService, TImplementation>(DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -38,7 +37,7 @@ namespace Cosmos.Dependency
         public static R AddSingleton<TService, TImplementation>(this R bag, TImplementation implementation)
         {
             bag.CheckNull(nameof(bag));
-            bag.Register(D.CreateForService<TService, TImplementation>(implementation, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForService<TService, TImplementation>(implementation, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -55,7 +54,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.Register(D.CreateForServiceDelegate<TService, TImplementation>(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForServiceDelegate<TService, TImplementation>(implementationFunc, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -72,7 +71,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.Register(D.CreateForResolvedServiceDelegate<TService, TImplementation>(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForResolvedServiceDelegate<TService, TImplementation>(implementationFunc, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -88,7 +87,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.Register(D.CreateForInstanceDelegate(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForInstanceDelegate(implementationFunc, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -104,7 +103,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.Register(D.CreateForServiceDelegate<TService>(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForServiceDelegate<TService>(implementationFunc, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -120,7 +119,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.Register(D.CreateForResolvedInstanceDelegate(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForResolvedInstanceDelegate(implementationFunc, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -136,7 +135,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.Register(D.CreateForResolvedObjectDelegate(implementationFunc, implementationType, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForResolvedObjectDelegate(implementationFunc, implementationType, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -150,7 +149,7 @@ namespace Cosmos.Dependency
         public static R AddSingleton<TImplementationSelf>(this R bag)
         {
             bag.CheckNull(nameof(bag));
-            bag.Register(D.CreateForInstanceSelf<TImplementationSelf>(DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForInstanceSelf<TImplementationSelf>(DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -165,7 +164,7 @@ namespace Cosmos.Dependency
         public static R AddSingleton(this R bag, Type serviceType, Type implementationType)
         {
             bag.CheckNull(nameof(bag));
-            bag.Register(D.CreateForType(serviceType, implementationType, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForType(serviceType, implementationType, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -180,7 +179,7 @@ namespace Cosmos.Dependency
         public static R AddSingleton(this R bag, object implementation, Type implementationType)
         {
             bag.CheckNull(nameof(bag));
-            bag.Register(D.CreateForObject(implementation, implementationType, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForObject(implementation, implementationType, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -196,7 +195,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.Register(D.CreateForInstanceDelegate(implementationFunc, implementationType, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForInstanceDelegate(implementationFunc, implementationType, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -215,7 +214,7 @@ namespace Cosmos.Dependency
         public static R AddSingletonService<TService>(this R bag, TService implementation)
         {
             bag.CheckNull(nameof(bag));
-            bag.Register(D.CreateForService<TService>(implementation, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForService<TService>(implementation, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -231,7 +230,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.Register(D.CreateForResolvedServiceDelegate<TService>(resolver => implementationFunc(resolver), DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForResolvedServiceDelegate<TService>(resolver => implementationFunc(resolver), DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -247,7 +246,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.Register(D.CreateForResolvedServiceDelegate<TService>(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.Register(DependencyProxyDescriptor.CreateForResolvedServiceDelegate<TService>(implementationFunc, DependencyLifetimeType.Singleton));
             return bag;
         }
 
@@ -265,7 +264,7 @@ namespace Cosmos.Dependency
         public static void TryAddSingleton<TService, TImplementation>(this R bag)
         {
             bag.CheckNull(nameof(bag));
-            bag.TryRegister(D.CreateForService<TService, TImplementation>(DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForService<TService, TImplementation>(DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -279,7 +278,7 @@ namespace Cosmos.Dependency
         public static void TryAddSingleton<TService, TImplementation>(this R bag, TImplementation implementation)
         {
             bag.CheckNull(nameof(bag));
-            bag.TryRegister(D.CreateForService<TService, TImplementation>(implementation, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForService<TService, TImplementation>(implementation, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -294,7 +293,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.TryRegister(D.CreateForServiceDelegate<TService, TImplementation>(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForServiceDelegate<TService, TImplementation>(implementationFunc, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -310,7 +309,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.TryRegister(D.CreateForResolvedServiceDelegate<TService, TImplementation>(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForResolvedServiceDelegate<TService, TImplementation>(implementationFunc, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -324,7 +323,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.TryRegister(D.CreateForInstanceDelegate(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForInstanceDelegate(implementationFunc, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -338,7 +337,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.TryRegister(D.CreateForServiceDelegate<TService>(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForServiceDelegate<TService>(implementationFunc, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -352,7 +351,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.TryRegister(D.CreateForResolvedInstanceDelegate(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForResolvedInstanceDelegate(implementationFunc, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -366,7 +365,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.TryRegister(D.CreateForResolvedObjectDelegate(implementationFunc, implementationType, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForResolvedObjectDelegate(implementationFunc, implementationType, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -378,7 +377,7 @@ namespace Cosmos.Dependency
         public static void TryAddSingleton<TImplementationSelf>(this R bag)
         {
             bag.CheckNull(nameof(bag));
-            bag.TryRegister(D.CreateForInstanceSelf<TImplementationSelf>(DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForInstanceSelf<TImplementationSelf>(DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -392,7 +391,7 @@ namespace Cosmos.Dependency
         public static void TryAddSingleton(this R bag, Type serviceType, Type implementationType)
         {
             bag.CheckNull(nameof(bag));
-            bag.TryRegister(D.CreateForType(serviceType, implementationType, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForType(serviceType, implementationType, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -405,7 +404,7 @@ namespace Cosmos.Dependency
         public static void TryAddSingleton(this R bag, object implementation, Type implementationType)
         {
             bag.CheckNull(nameof(bag));
-            bag.TryRegister(D.CreateForObject(implementation, implementationType, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForObject(implementation, implementationType, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -419,7 +418,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.TryRegister(D.CreateForObjectDelegate(implementationFunc, implementationType, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForObjectDelegate(implementationFunc, implementationType, DependencyLifetimeType.Singleton));
         }
 
         #endregion
@@ -436,7 +435,7 @@ namespace Cosmos.Dependency
         public static void TryAddSingletonService<TService>(this R bag, TService implementation)
         {
             bag.CheckNull(nameof(bag));
-            bag.TryRegister(D.CreateForService<TService>(implementation, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForService<TService>(implementation, DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -450,7 +449,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.TryRegister(D.CreateForResolvedServiceDelegate<TService>(resolver => implementationFunc(resolver), DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForResolvedServiceDelegate<TService>(resolver => implementationFunc(resolver), DependencyLifetimeType.Singleton));
         }
 
         /// <summary>
@@ -464,7 +463,7 @@ namespace Cosmos.Dependency
         {
             bag.CheckNull(nameof(bag));
             implementationFunc.CheckNull(nameof(implementationFunc));
-            bag.TryRegister(D.CreateForResolvedServiceDelegate<TService>(implementationFunc, DependencyLifetimeType.Singleton));
+            bag.TryRegister(DependencyProxyDescriptor.CreateForResolvedServiceDelegate<TService>(implementationFunc, DependencyLifetimeType.Singleton));
         }
 
         #endregion

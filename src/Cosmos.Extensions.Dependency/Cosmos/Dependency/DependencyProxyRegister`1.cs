@@ -7,7 +7,7 @@ namespace Cosmos.Dependency
     /// Register proxy bag
     /// </summary>
     /// <typeparam name="TServices"></typeparam>
-    public abstract class DependencyProxyRegister<TServices> : DependencyProxyRegister, IDisposable
+    public abstract class DependencyProxyRegister<TServices> : DependencyProxyRegister
     {
         /// <inheritdoc />
         protected DependencyProxyRegister(TServices services)
@@ -121,7 +121,7 @@ namespace Cosmos.Dependency
         private bool _disposable;
 
         /// <inheritdoc />
-        public void Dispose()
+        public override void Dispose()
         {
             if (!_disposable)
             {

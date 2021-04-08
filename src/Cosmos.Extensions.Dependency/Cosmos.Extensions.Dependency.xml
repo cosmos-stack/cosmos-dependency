@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Cosmos.Extensions.Dependency.Core</name>
+        <name>Cosmos.Extensions.Dependency</name>
     </assembly>
     <members>
         <member name="T:Cosmos.Dependency.DependencyLifetimeType">
@@ -24,28 +24,245 @@
             Transient
             </summary>
         </member>
+        <member name="T:Cosmos.Dependency.DependencyProxyDescriptor">
+            <summary>
+            Register proxy descriptor
+            </summary>
+        </member>
+        <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.ServiceType">
+            <summary>
+            Service type
+            </summary>
+        </member>
+        <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.ImplementationType">
+            <summary>
+            Implementation type
+            </summary>
+        </member>
+        <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.ImplementationTypeSelf">
+            <summary>
+            Implementation type self
+            </summary>
+        </member>
+        <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.InstanceOfImplementation">
+            <summary>
+            Instance of implementation
+            </summary>
+        </member>
+        <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.InstanceFuncForImplementation">
+            <summary>
+            Instance func for implementation
+            </summary>
+        </member>
+        <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.ResolveFuncForImplementation">
+            <summary>
+            Instance func for implementation
+            </summary>
+        </member>
+        <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.ProxyType">
+            <summary>
+            Proxy type
+            </summary>
+        </member>
+        <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.LifetimeType">
+            <summary>
+            Lifetime type
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForService``2(Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForService``2(``1,Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+            <param name="instance"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForService``1(System.Object,Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <param name="instance"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForInstanceSelf``1(Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TImplementationSelf"></typeparam>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForType(System.Type,System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="serviceType"></param>
+            <param name="implementationType"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForObject(System.Object,System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instance"></param>
+            <param name="implementationType"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForObjectDelegate(System.Func{System.Object},System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instanceFunc"></param>
+            <param name="implementationType"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForServiceDelegate``2(System.Func{``1},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForResolvedServiceDelegate``2(System.Func{Cosmos.Dependency.IDefinedResolver,``1},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <typeparam name="TService"></typeparam>
+            <typeparam name="TImplementation"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForServiceDelegate``1(System.Func{System.Object},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TService"></typeparam>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForResolvedServiceDelegate``1(System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForInstanceDelegate``1(System.Func{``0},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <typeparam name="TImplementation"></typeparam>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForResolvedInstanceDelegate``1(System.Func{Cosmos.Dependency.IDefinedResolver,``0},Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instanceFunc"></param>
+            <param name="lifetimeType"></param>
+            <typeparam name="TImplementation"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForInstanceDelegate(System.Func{System.Object},System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instanceFunc"></param>
+            <param name="implementationType"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForResolvedObjectDelegate(System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Create
+            </summary>
+            <param name="instanceFunc"></param>
+            <param name="implementationType"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
         <member name="T:Cosmos.Dependency.DependencyProxyRegister">
             <summary>
             Register proxy bag
             </summary>
         </member>
-        <member name="M:Cosmos.Dependency.DependencyProxyRegister.Register(Cosmos.Dependency.DependencyRegisterDescriptor)">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.Register(Cosmos.Dependency.DependencyProxyDescriptor)">
             <summary>
             Register
             </summary>
             <param name="descriptor"></param>
         </member>
-        <member name="M:Cosmos.Dependency.DependencyProxyRegister.TryRegister(Cosmos.Dependency.DependencyRegisterDescriptor)">
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.TryRegister(Cosmos.Dependency.DependencyProxyDescriptor)">
             <summary>
             Try register
             </summary>
             <param name="descriptor"></param>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.IsRegistered(System.Type)">
+            <summary>
+            Is registered
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.IsRegistered``1">
+            <summary>
+            Is registered
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.IsRegistered(System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Is registered
+            </summary>
+            <param name="type"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.IsRegistered``1(Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Is registered
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="lifetimeType"></param>
+            <returns></returns>
         </member>
         <member name="M:Cosmos.Dependency.DependencyProxyRegister.ExportDescriptors">
             <summary>
             Export Descriptors
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyRegister.Dispose">
+            <summary>
+            Dispose
+            </summary>
         </member>
         <member name="T:Cosmos.Dependency.DependencyProxyRegister`1">
             <summary>
@@ -159,188 +376,6 @@
             <summary>
             Resolved instance selft func
             </summary>
-        </member>
-        <member name="T:Cosmos.Dependency.DependencyRegisterDescriptor">
-            <summary>
-            Register proxy descriptor
-            </summary>
-        </member>
-        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ServiceType">
-            <summary>
-            Service type
-            </summary>
-        </member>
-        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ImplementationType">
-            <summary>
-            Implementation type
-            </summary>
-        </member>
-        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ImplementationTypeSelf">
-            <summary>
-            Implementation type self
-            </summary>
-        </member>
-        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.InstanceOfImplementation">
-            <summary>
-            Instance of implementation
-            </summary>
-        </member>
-        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.InstanceFuncForImplementation">
-            <summary>
-            Instance func for implementation
-            </summary>
-        </member>
-        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ResolveFuncForImplementation">
-            <summary>
-            Instance func for implementation
-            </summary>
-        </member>
-        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.ProxyType">
-            <summary>
-            Proxy type
-            </summary>
-        </member>
-        <member name="P:Cosmos.Dependency.DependencyRegisterDescriptor.LifetimeType">
-            <summary>
-            Lifetime type
-            </summary>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForService``2(Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TImplementation"></typeparam>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForService``2(``1,Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TImplementation"></typeparam>
-            <param name="instance"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForService``1(System.Object,Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TService"></typeparam>
-            <param name="instance"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForInstanceSelf``1(Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TImplementationSelf"></typeparam>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForType(System.Type,System.Type,Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="serviceType"></param>
-            <param name="implementationType"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForObject(System.Object,System.Type,Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instance"></param>
-            <param name="implementationType"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForObjectDelegate(System.Func{System.Object},System.Type,Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instanceFunc"></param>
-            <param name="implementationType"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForServiceDelegate``2(System.Func{``1},Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TImplementation"></typeparam>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForResolvedServiceDelegate``2(System.Func{Cosmos.Dependency.IDefinedResolver,``1},Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <typeparam name="TService"></typeparam>
-            <typeparam name="TImplementation"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForServiceDelegate``1(System.Func{System.Object},Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TService"></typeparam>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForResolvedServiceDelegate``1(System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <typeparam name="TService"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForInstanceDelegate``1(System.Func{``0},Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <typeparam name="TImplementation"></typeparam>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForResolvedInstanceDelegate``1(System.Func{Cosmos.Dependency.IDefinedResolver,``0},Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instanceFunc"></param>
-            <param name="lifetimeType"></param>
-            <typeparam name="TImplementation"></typeparam>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForInstanceDelegate(System.Func{System.Object},System.Type,Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instanceFunc"></param>
-            <param name="implementationType"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Cosmos.Dependency.DependencyRegisterDescriptor.CreateForResolvedObjectDelegate(System.Func{Cosmos.Dependency.IDefinedResolver,System.Object},System.Type,Cosmos.Dependency.DependencyLifetimeType)">
-            <summary>
-            Create
-            </summary>
-            <param name="instanceFunc"></param>
-            <param name="implementationType"></param>
-            <param name="lifetimeType"></param>
-            <returns></returns>
         </member>
         <member name="T:Cosmos.Dependency.RegisterProxyBagExtensions">
             <summary>
@@ -1259,6 +1294,22 @@
             <typeparam name="TService"></typeparam>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Dependency.IDefinedResolver.TryResolve(System.Type,System.Object@)">
+            <summary>
+            Try resolve
+            </summary>
+            <param name="serviceType"></param>
+            <param name="resolvedService"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDefinedResolver.TryResolve``1(System.Object@)">
+            <summary>
+            Try resolve
+            </summary>
+            <param name="resolvedService"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Dependency.IDefinedResolver.ResolveMany(System.Type)">
             <summary>
             Resolve many
@@ -1271,6 +1322,48 @@
             Resolve many
             </summary>
             <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDependencyProxyRegister.Register(Cosmos.Dependency.DependencyProxyDescriptor)">
+            <summary>
+            Register
+            </summary>
+            <param name="descriptor"></param>
+        </member>
+        <member name="M:Cosmos.Dependency.IDependencyProxyRegister.TryRegister(Cosmos.Dependency.DependencyProxyDescriptor)">
+            <summary>
+            Try register
+            </summary>
+            <param name="descriptor"></param>
+        </member>
+        <member name="M:Cosmos.Dependency.IDependencyProxyRegister.IsRegistered(System.Type)">
+            <summary>
+            Is registered
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDependencyProxyRegister.IsRegistered``1">
+            <summary>
+            Is registered
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDependencyProxyRegister.IsRegistered(System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Is registered
+            </summary>
+            <param name="type"></param>
+            <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.IDependencyProxyRegister.IsRegistered``1(Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            Is registered
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="lifetimeType"></param>
             <returns></returns>
         </member>
     </members>

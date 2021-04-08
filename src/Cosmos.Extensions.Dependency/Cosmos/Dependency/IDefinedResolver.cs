@@ -37,6 +37,22 @@ namespace Cosmos.Dependency
         TService RequiredResolve<TService>() where TService : class;
 
         /// <summary>
+        /// Try resolve
+        /// </summary>
+        /// <param name="serviceType"></param>
+        /// <param name="resolvedService"></param>
+        /// <returns></returns>
+        bool TryResolve(Type serviceType, out object resolvedService);
+
+        /// <summary>
+        /// Try resolve
+        /// </summary>
+        /// <param name="resolvedService"></param>
+        /// <typeparam name="TService"></typeparam>
+        /// <returns></returns>
+        bool TryResolve<TService>(out object resolvedService) where TService : class;
+
+        /// <summary>
         /// Resolve many
         /// </summary>
         /// <param name="serviceType"></param>
