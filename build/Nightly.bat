@@ -1,7 +1,7 @@
 @echo off
 
 echo =======================================================================
-echo Cosmos.Extensions.Dependency
+echo Cosmos.Dependency
 echo =======================================================================
 
 ::go to parent folder
