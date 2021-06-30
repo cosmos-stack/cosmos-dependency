@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using AspectCore.DependencyInjection;
+using Cosmos.Exceptions;
 
 namespace Cosmos.Dependency
 {
@@ -31,6 +32,36 @@ namespace Cosmos.Dependency
 
         /// <inheritdoc />
         public TService RequiredResolve<TService>() where TService : class => _resolver.ResolveRequired<TService>();
+
+        /// <inheritdoc />
+        public bool TryResolve(Type serviceType, out object resolvedService)
+        {
+            try
+            {
+                resolvedService = RequiredResolve(serviceType);
+                return true;
+            }
+            catch
+            {
+                resolvedService = default;
+                return false;
+            }
+        }
+
+        /// <inheritdoc />
+        public bool TryResolve<TService>(out object resolvedService) where TService : class
+        {
+            try
+            {
+                resolvedService = RequiredResolve<TService>();
+                return true;
+            }
+            catch
+            {
+                resolvedService = default;
+                return false;
+            }
+        }
 
         /// <inheritdoc />
         public IEnumerable<object> ResolveMany(Type serviceType) => _resolver.ResolveMany(serviceType);

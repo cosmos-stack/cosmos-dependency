@@ -34,6 +34,36 @@ namespace Cosmos.Dependency
         public TService RequiredResolve<TService>() where TService : class => _container.Resolve<TService>();
 
         /// <inheritdoc />
+        public bool TryResolve(Type serviceType, out object resolvedService)
+        {
+            try
+            {
+                resolvedService = RequiredResolve(serviceType);
+                return true;
+            }
+            catch
+            {
+                resolvedService = default;
+                return false;
+            }
+        }
+
+        /// <inheritdoc />
+        public bool TryResolve<TService>(out object resolvedService) where TService : class
+        {
+            try
+            {
+                resolvedService = RequiredResolve<TService>();
+                return true;
+            }
+            catch
+            {
+                resolvedService = default;
+                return false;
+            }
+        }
+
+        /// <inheritdoc />
         public IEnumerable<object> ResolveMany(Type serviceType) => _container.ResolveMany(serviceType);
 
         /// <inheritdoc />
