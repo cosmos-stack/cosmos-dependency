@@ -35,6 +35,22 @@ namespace Cosmos.Dependency
         }
 
         /// <inheritdoc />
+        public override bool IsRegistered(Type type, DependencyLifetimeType lifetimeType)
+        {
+            if (type is null)
+                return false;
+            return base.IsRegistered(type, lifetimeType) ||
+                   RawServices.Any(x => x.ServiceType == type && x.Lifetime == lifetimeType.ToAspectCoreLifetime());
+        }
+
+        /// <inheritdoc />
+        public override bool IsRegistered<T>(DependencyLifetimeType lifetimeType)
+        {
+            return base.IsRegistered<T>(lifetimeType) ||
+                   RawServices.Any(x => x.ServiceType == typeof(T) && x.Lifetime == lifetimeType.ToAspectCoreLifetime());
+        }
+
+        /// <inheritdoc />
         protected override void Dispose(bool disposing)
         {
             if (disposing)

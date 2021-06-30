@@ -17,7 +17,7 @@ namespace Cosmos.Dependency
         {
             _disposableAction = new DisposableAction<IServiceCollection>(s => s.AddRegisterProxyFrom(this), services);
         }
-        
+
         /// <inheritdoc />
         public override bool IsRegistered(Type type)
         {
@@ -32,6 +32,22 @@ namespace Cosmos.Dependency
         {
             return base.IsRegistered<T>() ||
                    RawServices.Any(x => x.ServiceType == typeof(T));
+        }
+
+        /// <inheritdoc />
+        public override bool IsRegistered(Type type, DependencyLifetimeType lifetimeType)
+        {
+            if (type is null)
+                return false;
+            return base.IsRegistered(type, lifetimeType) ||
+                   RawServices.Any(x => x.ServiceType == type && x.Lifetime == lifetimeType.ToMsLifetime());
+        }
+
+        /// <inheritdoc />
+        public override bool IsRegistered<T>(DependencyLifetimeType lifetimeType)
+        {
+            return base.IsRegistered<T>(lifetimeType) ||
+                   RawServices.Any(x => x.ServiceType == typeof(T) && x.Lifetime == lifetimeType.ToMsLifetime());
         }
 
         /// <inheritdoc />
