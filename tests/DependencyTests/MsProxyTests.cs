@@ -12,13 +12,14 @@ namespace DependencyTests
         [Fact]
         public void ProxyTest()
         {
-            var services = new ServiceCollection();
+            IServiceCollection services = new ServiceCollection();
             using (var proxy = new MicrosoftProxyRegister(services))
             {
                 proxy.AddSingleton<IJiu, RealJiu>();
                 proxy.AddSingleton<INice, AppleNice>();
                 proxy.AddSingleton<INice, BananaNice>();
                 proxy.AddSingleton<INice, CarNice>(r => new CarNice(r.Resolve<IJiu>()));
+                proxy.AddTestMyself();
             }
 
             var container = services.BuildServiceProvider();
@@ -30,6 +31,14 @@ namespace DependencyTests
 
             var instances1 = resolver.ResolveMany(typeof(INice));
             instances1.Count().ShouldBe(3);
+        }
+    }
+
+    public static class MsProxyExtensions
+    {
+        public static DependencyProxyRegister AddTestMyself(this DependencyProxyRegister register)
+        {
+            return register;
         }
     }
 }

@@ -1,7 +1,7 @@
 <Project>
 
     <PropertyGroup>
-        <Standard-PkgVersion>0.1.7.3</Standard-PkgVersion>
+        <Standard-PkgVersion>0.1.8.9</Standard-PkgVersion>
     </PropertyGroup>
 
 </Project>
