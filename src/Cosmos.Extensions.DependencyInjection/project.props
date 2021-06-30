@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.DependencyInjection</AssemblyName>
+        <PackageId>Cosmos.Extensions.DependencyInjection</PackageId>
+        <Description>Extensions of IOC component Microsoft.Extensions.DependencyInjection for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>

@@ -18,6 +18,40 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
+        <member name="T:Autofac.FluentRegisterTypesExtensions">
+            <summary>
+            Extensions for Autofac
+            </summary>
+        </member>
+        <member name="M:Autofac.FluentRegisterTypesExtensions.BeginTypedRegister(Autofac.ContainerBuilder)">
+            <summary>
+            Begin register
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Autofac.FluentRegisterTypesExtensions.BeginRegister(Autofac.ContainerBuilder)">
+            <summary>
+            Begin register
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Autofac.FluentRegisterTypesExtensions.Finish(Cosmos.Dependency.DependencyProxyRegister{Autofac.ContainerBuilder})">
+            <summary>
+            End register
+            </summary>
+            <param name="register"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Autofac.FluentRegisterTypesExtensions.Finish(Cosmos.Dependency.DependencyProxyRegister)">
+            <summary>
+            End register
+            </summary>
+            <param name="register"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
         <member name="T:Autofac.AutofacResolveExtensions">
             <summary>
             Autofac resolve extensions
@@ -47,6 +81,18 @@
         <member name="M:Cosmos.Dependency.AutofacProxyRegister.#ctor(Autofac.ContainerBuilder)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.IsRegistered(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.IsRegistered``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.IsRegistered(System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.IsRegistered``1(Cosmos.Dependency.DependencyLifetimeType)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Dependency.AutofacProxyRegister.Dispose(System.Boolean)">
             <inheritdoc />
         </member>
@@ -71,6 +117,12 @@
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Dependency.AutofacServiceResolver.RequiredResolve``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.TryResolve(System.Type,System.Object@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.TryResolve``1(System.Object@)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Dependency.AutofacServiceResolver.ResolveMany(System.Type)">

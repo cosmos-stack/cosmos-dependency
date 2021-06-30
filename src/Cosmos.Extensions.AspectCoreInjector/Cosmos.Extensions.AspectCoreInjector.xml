@@ -18,12 +18,61 @@
             <returns></returns>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
+        <member name="T:AspectCore.DependencyInjection.FluentAspectCoreInjectorExtensions">
+            <summary>
+            Extensions for NCC AspectCore
+            </summary>
+        </member>
+        <member name="M:AspectCore.DependencyInjection.FluentAspectCoreInjectorExtensions.BeginTypedRegister``1(``0)">
+            <summary>
+            Begin register
+            </summary>
+            <param name="services"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:AspectCore.DependencyInjection.FluentAspectCoreInjectorExtensions.BeginRegister``1(``0)">
+            <summary>
+            Begin register
+            </summary>
+            <param name="services"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:AspectCore.DependencyInjection.FluentAspectCoreInjectorExtensions.Finish(Cosmos.Dependency.DependencyProxyRegister{AspectCore.DependencyInjection.IServiceContext})">
+            <summary>
+            End register
+            </summary>
+            <param name="register"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AspectCore.DependencyInjection.FluentAspectCoreInjectorExtensions.Finish``1(Cosmos.Dependency.DependencyProxyRegister)">
+            <summary>
+            End register
+            </summary>
+            <param name="register"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
         <member name="T:Cosmos.Dependency.AspectCoreProxyRegister">
             <summary>
             AspectCore dependency proxy register
             </summary>
         </member>
         <member name="M:Cosmos.Dependency.AspectCoreProxyRegister.#ctor(AspectCore.DependencyInjection.IServiceContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AspectCoreProxyRegister.IsRegistered(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AspectCoreProxyRegister.IsRegistered``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AspectCoreProxyRegister.IsRegistered(System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AspectCoreProxyRegister.IsRegistered``1(Cosmos.Dependency.DependencyLifetimeType)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Dependency.AspectCoreProxyRegister.Dispose(System.Boolean)">
@@ -50,6 +99,12 @@
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Dependency.AspectCoreServiceResolver.RequiredResolve``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AspectCoreServiceResolver.TryResolve(System.Type,System.Object@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AspectCoreServiceResolver.TryResolve``1(System.Object@)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Dependency.AspectCoreServiceResolver.ResolveMany(System.Type)">

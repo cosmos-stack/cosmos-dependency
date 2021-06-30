@@ -1,19 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="..\..\common.props" />
-
     <PropertyGroup>
-        <AssemblyName>Cosmos.Extensions.Autofac</AssemblyName>
-        <PackageId>Cosmos.Extensions.Autofac</PackageId>
-        <Description>Extensions of IOC component Autofac for Cosmos base library</Description>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Autofac" Version="5.2.0" />
-    </ItemGroup>
+    <Import Project="project.props" />
 
-    <ItemGroup>
-        <ProjectReference Include="..\Cosmos.Extensions.Dependency.Core\Cosmos.Extensions.Dependency.Core.csproj" />
-    </ItemGroup>
+    <Import Project="..\..\common.props" />
+
+    <Import Project="project.dependency.props" />
 
 </Project>

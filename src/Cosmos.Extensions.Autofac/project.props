@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Autofac</AssemblyName>
+        <PackageId>Cosmos.Extensions.Autofac</PackageId>
+        <Description>Extensions of IOC component Autofac for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>
