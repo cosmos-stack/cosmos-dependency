@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cosmos.Reflection;
 
 namespace Autofac
 {
@@ -8,7 +9,7 @@ namespace Autofac
     /// </summary>
     public static class AutofacResolveExtensions
     {
-        private static Type _pinedEnumerableType = typeof(IEnumerable<>);
+        private static Type _targetType = typeof(IEnumerable<>);
 
         /// <summary>
         /// Resolve many
@@ -18,7 +19,7 @@ namespace Autofac
         /// <returns></returns>
         public static IEnumerable<object> ResolveMany(this IComponentContext container, Type serviceType)
         {
-            var type = _pinedEnumerableType.MakeGenericType(serviceType);
+            var type = _targetType.MakeGenericType(serviceType);
             return container.Resolve(type) as IEnumerable<object>;
         }
 

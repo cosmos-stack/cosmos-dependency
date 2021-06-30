@@ -9,7 +9,7 @@ namespace Cosmos.Dependency
     /// </summary>
     public abstract class DependencyProxyRegister : IDependencyProxyRegister
     {
-        private readonly List<DependencyProxyDescriptor> _descriptors = new List<DependencyProxyDescriptor>();
+        private readonly List<DependencyProxyDescriptor> _descriptors = new();
 
         /// <summary>
         /// Register

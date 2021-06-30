@@ -1,5 +1,6 @@
 ﻿using System;
 using Cosmos.Dependency;
+
 // ReSharper disable UnusedTypeParameter
 
 namespace AspectCore.DependencyInjection
@@ -58,7 +59,7 @@ namespace AspectCore.DependencyInjection
         {
             if (register is DependencyProxyRegister<IServiceContext> typedRegister)
             {
-                typedRegister.Finish();
+                return typedRegister.Finish();
             }
 
             throw new ArgumentException("Cannot convert register to 'DependencyProxyRegister<IServiceContext>'.");
