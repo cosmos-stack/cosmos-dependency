@@ -20,7 +20,7 @@ namespace AspectCore.DependencyInjection
         {
             services.CheckNull(nameof(services));
 
-            if (bag != null)
+            if (bag is not null)
             {
                 var descriptors = bag.ExportDescriptors();
 
@@ -59,6 +59,13 @@ namespace AspectCore.DependencyInjection
                         case DependencyProxyType.ResolvedInstanceSelfFunc:
                             ResolvedInstanceSelfFuncRegister(services, descriptor);
                             break;
+
+                        case DependencyProxyType.CustomUnsafeDelegate:
+                            WorkForCustomUnsafeDelegate(services, descriptor);
+                            break;
+
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
                 }
             }
@@ -66,13 +73,13 @@ namespace AspectCore.DependencyInjection
             return services;
         }
 
-        private static void TypeToTypeRegister(IServiceContext services, DependencyRegisterDescriptor d)
+        private static void TypeToTypeRegister(IServiceContext services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToAspectCoreLifetime();
             services.AddType(d.ServiceType, d.ImplementationType, lifetime);
         }
 
-        private static void TypeToInstanceRegister(IServiceContext services, DependencyRegisterDescriptor d)
+        private static void TypeToInstanceRegister(IServiceContext services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToAspectCoreLifetime();
             switch (lifetime)
@@ -86,19 +93,19 @@ namespace AspectCore.DependencyInjection
             }
         }
 
-        private static void TypeToInstanceFuncRegister(IServiceContext services, DependencyRegisterDescriptor d)
+        private static void TypeToInstanceFuncRegister(IServiceContext services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToAspectCoreLifetime();
             services.AddDelegate(d.ServiceType, r => d.InstanceFuncForImplementation(), lifetime);
         }
 
-        private static void TypeSelfRegister(IServiceContext services, DependencyRegisterDescriptor d)
+        private static void TypeSelfRegister(IServiceContext services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToAspectCoreLifetime();
             services.AddType(d.ImplementationTypeSelf, lifetime);
         }
 
-        private static void InstanceSelfRegister(IServiceContext services, DependencyRegisterDescriptor d)
+        private static void InstanceSelfRegister(IServiceContext services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToAspectCoreLifetime();
             switch (lifetime)
@@ -112,7 +119,7 @@ namespace AspectCore.DependencyInjection
             }
         }
 
-        private static void InstanceSelfFuncRegister(IServiceContext services, DependencyRegisterDescriptor d)
+        private static void InstanceSelfFuncRegister(IServiceContext services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToAspectCoreLifetime();
             switch (lifetime)
@@ -135,7 +142,7 @@ namespace AspectCore.DependencyInjection
             }
         }
 
-        private static void TypeToResolvedInstanceFuncRegister(IServiceContext services, DependencyRegisterDescriptor d)
+        private static void TypeToResolvedInstanceFuncRegister(IServiceContext services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToAspectCoreLifetime();
             switch (lifetime)
@@ -158,7 +165,7 @@ namespace AspectCore.DependencyInjection
             }
         }
 
-        private static void ResolvedInstanceSelfFuncRegister(IServiceContext services, DependencyRegisterDescriptor d)
+        private static void ResolvedInstanceSelfFuncRegister(IServiceContext services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToAspectCoreLifetime();
             switch (lifetime)
@@ -177,6 +184,11 @@ namespace AspectCore.DependencyInjection
                     services.AddDelegate(p => d.ResolveFuncForImplementation(p.ToAbstract()));
                     break;
             }
+        }
+
+        private static void WorkForCustomUnsafeDelegate(IServiceContext services, DependencyProxyDescriptor d)
+        {
+            d.CustomUnsafeDelegate?.Invoke(services);
         }
     }
 }

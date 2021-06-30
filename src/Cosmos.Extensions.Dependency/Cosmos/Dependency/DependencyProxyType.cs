@@ -41,8 +41,13 @@
         InstanceSelfFunc,
 
         /// <summary>
-        /// Resolved instance selft func
+        /// Resolved instance self func
         /// </summary>
-        ResolvedInstanceSelfFunc
+        ResolvedInstanceSelfFunc,
+        
+        /// <summary>
+        /// Custom func
+        /// </summary>
+        CustomUnsafeDelegate,
     }
 }

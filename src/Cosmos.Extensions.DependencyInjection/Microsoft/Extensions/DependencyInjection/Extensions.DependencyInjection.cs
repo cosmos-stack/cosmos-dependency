@@ -17,10 +17,10 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <exception cref="ArgumentNullException"></exception>
         public static IServiceCollection AddRegisterProxyFrom(this IServiceCollection services, DependencyProxyRegister bag)
         {
-            if (services == null)
+            if (services is null)
                 throw new ArgumentNullException(nameof(services));
 
-            if (bag != null)
+            if (bag is not null)
             {
                 var descriptors = bag.ExportDescriptors();
 
@@ -59,6 +59,13 @@ namespace Microsoft.Extensions.DependencyInjection
                         case DependencyProxyType.ResolvedInstanceSelfFunc:
                             ResolvedInstanceSelfFuncRegister(services, descriptor);
                             break;
+
+                        case DependencyProxyType.CustomUnsafeDelegate:
+                            WorkForCustomUnsafeDelegate(services, descriptor);
+                            break;
+
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
                 }
             }
@@ -66,7 +73,7 @@ namespace Microsoft.Extensions.DependencyInjection
             return services;
         }
 
-        private static void TypeToTypeRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        private static void TypeToTypeRegister(IServiceCollection services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToMsLifetime();
             switch (lifetime)
@@ -89,7 +96,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
         }
 
-        private static void TypeToInstanceRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        private static void TypeToInstanceRegister(IServiceCollection services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToMsLifetime();
             switch (lifetime)
@@ -103,7 +110,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
         }
 
-        private static void TypeToInstanceFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        private static void TypeToInstanceFuncRegister(IServiceCollection services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToMsLifetime();
             switch (lifetime)
@@ -126,7 +133,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
         }
 
-        private static void TypeSelfRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        private static void TypeSelfRegister(IServiceCollection services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToMsLifetime();
             switch (lifetime)
@@ -149,7 +156,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
         }
 
-        private static void InstanceSelfRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        private static void InstanceSelfRegister(IServiceCollection services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToMsLifetime();
             switch (lifetime)
@@ -163,7 +170,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
         }
 
-        private static void InstanceSelfFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        private static void InstanceSelfFuncRegister(IServiceCollection services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToMsLifetime();
             switch (lifetime)
@@ -186,7 +193,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
         }
 
-        private static void TypeToResolvedInstanceFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        private static void TypeToResolvedInstanceFuncRegister(IServiceCollection services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToMsLifetime();
             switch (lifetime)
@@ -209,7 +216,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
         }
 
-        private static void ResolvedInstanceSelfFuncRegister(IServiceCollection services, DependencyRegisterDescriptor d)
+        private static void ResolvedInstanceSelfFuncRegister(IServiceCollection services, DependencyProxyDescriptor d)
         {
             var lifetime = d.LifetimeType.ToMsLifetime();
             switch (lifetime)
@@ -230,6 +237,11 @@ namespace Microsoft.Extensions.DependencyInjection
                     services.AddTransient(p => d.ResolveFuncForImplementation(p.ToAbstract()));
                     break;
             }
+        }
+
+        private static void WorkForCustomUnsafeDelegate(IServiceCollection services, DependencyProxyDescriptor d)
+        {
+            d.CustomUnsafeDelegate?.Invoke(services);
         }
     }
 }

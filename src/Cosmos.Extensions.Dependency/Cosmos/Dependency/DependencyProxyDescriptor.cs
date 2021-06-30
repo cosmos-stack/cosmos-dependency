@@ -40,6 +40,12 @@ namespace Cosmos.Dependency
         public Func<IDefinedResolver, object> ResolveFuncForImplementation { get; set; }
 
         /// <summary>
+        /// Custom Func <br />
+        /// Please use it with care. If it is not necessary, do not use CustomFunc.
+        /// </summary>
+        public Func<object, object> CustomUnsafeDelegate { get; set; }
+
+        /// <summary>
         /// Proxy type
         /// </summary>
         public DependencyProxyType ProxyType { get; set; }
@@ -58,7 +64,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForService<TService, TImplementation>(DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TService),
                 ServiceType = typeof(TService),
@@ -78,7 +84,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForService<TService, TImplementation>(TImplementation instance, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TService),
                 ServiceType = typeof(TService),
@@ -97,7 +103,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForService<TService>(object instance, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TService),
                 ServiceType = typeof(TService),
@@ -115,7 +121,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForInstanceSelf<TImplementationSelf>(DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TImplementationSelf),
                 ImplementationTypeSelf = typeof(TImplementationSelf),
@@ -133,7 +139,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForType(Type serviceType, Type implementationType, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = serviceType,
                 ServiceType = serviceType,
@@ -152,7 +158,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForObject(object instance, Type implementationType, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = implementationType,
                 InstanceOfImplementation = instance,
@@ -170,7 +176,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForObjectDelegate(Func<object> instanceFunc, Type implementationType, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = implementationType,
                 InstanceFuncForImplementation = instanceFunc,
@@ -189,7 +195,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForServiceDelegate<TService, TImplementation>(Func<TImplementation> instanceFunc, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TService),
                 ServiceType = typeof(TService),
@@ -211,7 +217,7 @@ namespace Cosmos.Dependency
         public static DependencyProxyDescriptor CreateForResolvedServiceDelegate<TService, TImplementation>(Func<IDefinedResolver, TImplementation> instanceFunc,
             DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TService),
                 ServiceType = typeof(TService),
@@ -231,7 +237,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForServiceDelegate<TService>(Func<object> instanceFunc, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TService),
                 ServiceType = typeof(TService),
@@ -250,7 +256,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForResolvedServiceDelegate<TService>(Func<IDefinedResolver, object> instanceFunc, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TService),
                 ServiceType = typeof(TService),
@@ -269,7 +275,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForInstanceDelegate<TImplementation>(Func<TImplementation> instanceFunc, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TImplementation),
                 ImplementationTypeSelf = typeof(TImplementation),
@@ -289,7 +295,7 @@ namespace Cosmos.Dependency
         public static DependencyProxyDescriptor CreateForResolvedInstanceDelegate<TImplementation>(Func<IDefinedResolver, TImplementation> instanceFunc,
             DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = typeof(TImplementation),
                 ImplementationTypeSelf = typeof(TImplementation),
@@ -308,7 +314,7 @@ namespace Cosmos.Dependency
         /// <returns></returns>
         public static DependencyProxyDescriptor CreateForInstanceDelegate(Func<object> instanceFunc, Type implementationType, DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = implementationType,
                 InstanceFuncForImplementation = instanceFunc,
@@ -327,12 +333,27 @@ namespace Cosmos.Dependency
         public static DependencyProxyDescriptor CreateForResolvedObjectDelegate(Func<IDefinedResolver, object> instanceFunc, Type implementationType,
             DependencyLifetimeType lifetimeType)
         {
-            return new DependencyProxyDescriptor
+            return new()
             {
                 RegisterType = implementationType,
                 ResolveFuncForImplementation = instanceFunc,
                 ProxyType = DependencyProxyType.ResolvedInstanceSelfFunc,
                 LifetimeType = lifetimeType
+            };
+        }
+
+        /// <summary>
+        /// Create
+        /// </summary>
+        /// <param name="customUnsafeDelegate"></param>
+        /// <typeparam name="TContext"></typeparam>
+        /// <returns></returns>
+        public static DependencyProxyDescriptor CreateForCustomUnsafeDelegate<TContext>(Func<TContext, TContext> customUnsafeDelegate)
+        {
+            return new()
+            {
+                CustomUnsafeDelegate = o => customUnsafeDelegate.Invoke((TContext)o),
+                ProxyType = DependencyProxyType.CustomUnsafeDelegate
             };
         }
     }

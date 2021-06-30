@@ -20,7 +20,7 @@ namespace Autofac
             if (services is null)
                 throw new ArgumentNullException(nameof(services));
 
-            if (bag != null)
+            if (bag is not null)
             {
                 var descriptors = bag.ExportDescriptors();
 
@@ -59,6 +59,13 @@ namespace Autofac
                         case DependencyProxyType.ResolvedInstanceSelfFunc:
                             ResolvedInstanceSelfFuncRegister(services, descriptor);
                             break;
+
+                        case DependencyProxyType.CustomUnsafeDelegate:
+                            WorkForCustomUnsafeDelegate(services, descriptor);
+                            break;
+
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
                 }
             }
@@ -66,7 +73,7 @@ namespace Autofac
             return services;
         }
 
-        private static void TypeToTypeRegister(ContainerBuilder services, DependencyRegisterDescriptor d)
+        private static void TypeToTypeRegister(ContainerBuilder services, DependencyProxyDescriptor d)
         {
             var builder = services.RegisterType(d.ImplementationType).As(d.ServiceType);
             switch (d.LifetimeType)
@@ -89,7 +96,7 @@ namespace Autofac
             }
         }
 
-        private static void TypeToInstanceRegister(ContainerBuilder services, DependencyRegisterDescriptor d)
+        private static void TypeToInstanceRegister(ContainerBuilder services, DependencyProxyDescriptor d)
         {
             var builder = services.RegisterInstance(d.InstanceOfImplementation).As(d.ServiceType);
             switch (d.LifetimeType)
@@ -112,7 +119,7 @@ namespace Autofac
             }
         }
 
-        private static void TypeToInstanceFuncRegister(ContainerBuilder services, DependencyRegisterDescriptor d)
+        private static void TypeToInstanceFuncRegister(ContainerBuilder services, DependencyProxyDescriptor d)
         {
             var builder = services.Register(c => d.InstanceFuncForImplementation()).As(d.ServiceType);
 
@@ -136,7 +143,7 @@ namespace Autofac
             }
         }
 
-        private static void TypeSelfRegister(ContainerBuilder services, DependencyRegisterDescriptor d)
+        private static void TypeSelfRegister(ContainerBuilder services, DependencyProxyDescriptor d)
         {
             var builder = services.RegisterType(d.ImplementationTypeSelf);
             switch (d.LifetimeType)
@@ -159,7 +166,7 @@ namespace Autofac
             }
         }
 
-        private static void InstanceSelfRegister(ContainerBuilder services, DependencyRegisterDescriptor d)
+        private static void InstanceSelfRegister(ContainerBuilder services, DependencyProxyDescriptor d)
         {
             var builder = services.RegisterInstance(d.InstanceOfImplementation);
             switch (d.LifetimeType)
@@ -182,7 +189,7 @@ namespace Autofac
             }
         }
 
-        private static void InstanceSelfFuncRegister(ContainerBuilder services, DependencyRegisterDescriptor d)
+        private static void InstanceSelfFuncRegister(ContainerBuilder services, DependencyProxyDescriptor d)
         {
             var builder = services.RegisterInstance(d.InstanceFuncForImplementation());
             switch (d.LifetimeType)
@@ -205,7 +212,7 @@ namespace Autofac
             }
         }
 
-        private static void TypeToResolvedInstanceFuncRegister(ContainerBuilder services, DependencyRegisterDescriptor d)
+        private static void TypeToResolvedInstanceFuncRegister(ContainerBuilder services, DependencyProxyDescriptor d)
         {
             var builder = services.Register(context => d.ResolveFuncForImplementation(context.ToAbstract())).As(d.ServiceType);
             switch (d.LifetimeType)
@@ -228,7 +235,7 @@ namespace Autofac
             }
         }
 
-        private static void ResolvedInstanceSelfFuncRegister(ContainerBuilder services, DependencyRegisterDescriptor d)
+        private static void ResolvedInstanceSelfFuncRegister(ContainerBuilder services, DependencyProxyDescriptor d)
         {
             var builder = services.Register(context => d.ResolveFuncForImplementation(context.ToAbstract()));
             switch (d.LifetimeType)
@@ -249,6 +256,11 @@ namespace Autofac
                     builder.InstancePerDependency();
                     break;
             }
+        }
+
+        private static void WorkForCustomUnsafeDelegate(ContainerBuilder services, DependencyProxyDescriptor d)
+        {
+            d.CustomUnsafeDelegate?.Invoke(services);
         }
     }
 }
