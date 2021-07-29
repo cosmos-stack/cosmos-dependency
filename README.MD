@@ -1,4 +1,4 @@
-# COSMOSLOOPS/Dependency
+# Cosmos Dependency Overview
 
 Cosmos.Dependency extensions is an inline common project of [COSMOS LOOPS PROGRAMME](https://github.com/cosmos-loops).
 
@@ -8,11 +8,27 @@ Cosmos.Dependency extensions provides several extensions:
 - Cosmos.Extensions.AspectCoreInjector
 - Cosmos.Extensions.DependencyInjection
 
+## Installation
+
+Install via NuGet (Package Manager):
+
+```shell
+Install-Package Cosmos.Extensions.Dependency
+```
+
+or modify the `.csproj` file:
+
+```xml
+<PackageReference Include="Cosmos.Extensions.Dependency" Version="LATEST_VERSION" />
+```
+
+Fill in the latest version number in `LATEST_VERSION`.
+
 ---
 
 ## Thanks
 
-People or projects that have made a great contribbution to this project:
+People or projects that have made a great contribution to this project:
 
 - _The next one must be you_
 
@@ -24,6 +40,6 @@ People or projects that have made a great contribbution to this project:
 
 ## License
 
-Member project of [COSMOS LOOPS PROGRAMME](https://github.com/cosmos-loops).
+Member project of [Cosmosloops Labs.](https://github.com/cosmos-loops).
 
-[Apache 2.0 License](/LICENSE)
+[Apache License 2.0](/LICENSE)
