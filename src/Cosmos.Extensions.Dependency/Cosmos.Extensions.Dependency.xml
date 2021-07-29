@@ -59,6 +59,12 @@
             Instance func for implementation
             </summary>
         </member>
+        <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.CustomUnsafeDelegate">
+            <summary>
+            Custom Func <br />
+            Please use it with care. If it is not necessary, do not use CustomFunc.
+            </summary>
+        </member>
         <member name="P:Cosmos.Dependency.DependencyProxyDescriptor.ProxyType">
             <summary>
             Proxy type
@@ -204,6 +210,14 @@
             <param name="instanceFunc"></param>
             <param name="implementationType"></param>
             <param name="lifetimeType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.DependencyProxyDescriptor.CreateForCustomUnsafeDelegate``1(System.Func{``0,``0})">
+            <summary>
+            Create
+            </summary>
+            <param name="customUnsafeDelegate"></param>
+            <typeparam name="TContext"></typeparam>
             <returns></returns>
         </member>
         <member name="T:Cosmos.Dependency.DependencyProxyRegister">
@@ -374,8 +388,72 @@
         </member>
         <member name="F:Cosmos.Dependency.DependencyProxyType.ResolvedInstanceSelfFunc">
             <summary>
-            Resolved instance selft func
+            Resolved instance self func
             </summary>
+        </member>
+        <member name="F:Cosmos.Dependency.DependencyProxyType.CustomUnsafeDelegate">
+            <summary>
+            Custom func
+            </summary>
+        </member>
+        <member name="T:Cosmos.Dependency.Events.IEventPublisher">
+            <summary>
+            To publish an event
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.Events.IEventPublisher.Publish``1(``0)">
+            <summary>
+            Publish
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Cosmos.Dependency.Events.IAsyncEventPublisher">
+            <summary>
+            To publish an event asynchronously
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.Events.IAsyncEventPublisher.PublishAsync``1(``0)">
+            <summary>
+            Publish async
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Dependency.Events.EventPublisher">
+            <summary>
+            An abstract event publisher
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.Events.EventPublisher.Publish``1(``0)">
+            <summary>
+            Publish
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.Dependency.Events.EventPublisher.PublishAsync``1(``0)">
+            <summary>
+            Publish async
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Dependency.Events.IHandleEvent`1">
+            <summary>
+            Handle an event
+            </summary>
+            <typeparam name="TMessage"></typeparam>
+        </member>
+        <member name="M:Cosmos.Dependency.Events.IHandleEvent`1.Handle(`0)">
+            <summary>
+            Handle
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Cosmos.Dependency.Events.IHandleEventAsync`1">
+            <summary>
+            Handle an event asynchronously
+            </summary>
+            <typeparam name="TMessage"></typeparam>
         </member>
         <member name="T:Cosmos.Dependency.RegisterProxyBagExtensions">
             <summary>
