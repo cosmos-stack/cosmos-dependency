@@ -1,7 +1,7 @@
 <Project>
 
     <PropertyGroup>
-        <Standard-PkgVersion>0.2.0</Standard-PkgVersion>
+        <Standard-RefVersion>0.1.1.1</Standard-RefVersion>
     </PropertyGroup>
 
 </Project>
