@@ -1,9 +1,0 @@
-<Project>
-
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Extensions.Dependency</AssemblyName>
-        <PackageId>Cosmos.Extensions.Dependency</PackageId>
-        <Description>Dependency core libaray for Cosmos base library</Description>
-    </PropertyGroup>
-
-</Project>

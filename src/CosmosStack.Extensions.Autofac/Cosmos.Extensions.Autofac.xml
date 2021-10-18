@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CosmosStack.Extensions.Autofac</name>
+    </assembly>
+    <members>
+        <member name="T:Autofac.RegisterTypesExtensions">
+            <summary>
+            Extensions for Autofac
+            </summary>
+        </member>
+        <member name="M:Autofac.RegisterTypesExtensions.RegisterProxyFrom(Autofac.ContainerBuilder,Cosmos.Dependency.DependencyProxyRegister)">
+            <summary>
+            Register Proxy
+            </summary>
+            <param name="services"></param>
+            <param name="bag"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Autofac.FluentRegisterTypesExtensions">
+            <summary>
+            Extensions for Autofac
+            </summary>
+        </member>
+        <member name="M:Autofac.FluentRegisterTypesExtensions.BeginTypedRegister(Autofac.ContainerBuilder)">
+            <summary>
+            Begin register
+            </summary>
+            <param name="builder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Autofac.FluentRegisterTypesExtensions.BeginRegister(Autofac.ContainerBuilder)">
+            <summary>
+            Begin register
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Autofac.FluentRegisterTypesExtensions.Finish(Cosmos.Dependency.DependencyProxyRegister{Autofac.ContainerBuilder})">
+            <summary>
+            End register
+            </summary>
+            <param name="register"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Autofac.FluentRegisterTypesExtensions.Finish(Cosmos.Dependency.DependencyProxyRegister)">
+            <summary>
+            End register
+            </summary>
+            <param name="register"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:Autofac.AutofacResolveExtensions">
+            <summary>
+            Autofac resolve extensions
+            </summary>
+        </member>
+        <member name="M:Autofac.AutofacResolveExtensions.ResolveMany(Autofac.IComponentContext,System.Type)">
+            <summary>
+            Resolve many
+            </summary>
+            <param name="container"></param>
+            <param name="serviceType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Autofac.AutofacResolveExtensions.ResolveMany``1(Autofac.IComponentContext)">
+            <summary>
+            Resolve many
+            </summary>
+            <param name="container"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Dependency.AutofacProxyRegister">
+            <summary>
+            Autofac dependency proxy register
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.#ctor(Autofac.ContainerBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.IsRegistered(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.IsRegistered``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.IsRegistered(System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.IsRegistered``1(Cosmos.Dependency.DependencyLifetimeType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacProxyRegister.Dispose(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Dependency.AutofacServiceResolver">
+            <summary>
+            Autofac service resolver
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.#ctor(Autofac.IComponentContext)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Dependency.AutofacServiceResolver"/>
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.Resolve(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.Resolve``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.RequiredResolve(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.RequiredResolve``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.TryResolve(System.Type,System.Object@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.TryResolve``1(System.Object@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.ResolveMany(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.AutofacServiceResolver.ResolveMany``1">
+            <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Dependency.ContainerExtensions">
+            <summary>
+            Extensions for Autofac container
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.ContainerExtensions.ToAbstract(Autofac.IComponentContext)">
+            <summary>
+            To abstract
+            </summary>
+            <param name="container"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

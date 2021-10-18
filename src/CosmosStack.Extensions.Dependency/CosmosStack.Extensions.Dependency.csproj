@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+        <AssemblyName>CosmosStack.Extensions.Dependency</AssemblyName>
+        <PackageId>CosmosStack.Extensions.Dependency</PackageId>
+    </PropertyGroup>
+
+    <Import Project="project.props" />
+
+    <Import Project="..\..\common.props" />
+
+    <Import Project="project.dependency.props" />
+
+</Project>

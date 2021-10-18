@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>CosmosStack.Extensions.AspectCoreInjector</AssemblyName>
+        <PackageId>CosmosStack.Extensions.AspectCoreInjector</PackageId>
+        <Description>Extensions of IOC component AspectCore-Framework inner Injector Container for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>
