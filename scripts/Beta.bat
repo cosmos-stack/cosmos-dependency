@@ -1,7 +1,7 @@
 @echo off
 
 echo =======================================================================
-echo Cosmos.Dependency
+echo CosmosStack.Dependency
 echo =======================================================================
 
 ::go to parent folder
@@ -21,10 +21,10 @@ echo Cleaned up all nuget packages.
 echo.
 
 ::start to package all projects
-dotnet pack src/Cosmos.Extensions.Dependency/Cosmos.Extensions.Dependency.csproj                   -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Autofac/Cosmos.Extensions.Autofac.csproj                         -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.AspectCoreInjector/Cosmos.Extensions.AspectCoreInjector.csproj   -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.DependencyInjection/Cosmos.Extensions.DependencyInjection.csproj -c Release -o nuget_packages --no-restore
+dotnet pack src/CosmosStack.Extensions.Dependency          -c Release -o nuget_packages --no-restore
+dotnet pack src/CosmosStack.Extensions.Autofac             -c Release -o nuget_packages --no-restore
+dotnet pack src/CosmosStack.Extensions.AspectCoreInjector  -c Release -o nuget_packages --no-restore
+dotnet pack src/CosmosStack.Extensions.DependencyInjection -c Release -o nuget_packages --no-restore
 
 for /R "nuget_packages" %%s in (*symbols.nupkg) do (
     del "%%s"
@@ -40,4 +40,4 @@ for /R "nuget_packages" %%s in (*.nupkg) do (
 )
 
 ::get back to build folder
-cd build
+cd scripts

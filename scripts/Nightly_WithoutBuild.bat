@@ -1,7 +1,7 @@
 @echo off
 
 echo =======================================================================
-echo Cosmos.Dependency (Without Build)
+echo CosmosStack.Dependency (Without Build)
 echo =======================================================================
 
 ::go to parent folder
@@ -20,4 +20,4 @@ for /R "nuget_packages" %%s in (*.nupkg) do (
 )
 
 ::get back to build folder
-cd build
+cd scripts
