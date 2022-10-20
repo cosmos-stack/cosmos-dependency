@@ -15,13 +15,13 @@ ProjectSection(SolutionItems) = preProject
 	asset\version.props = asset\version.props
 EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.Dependency", "src\CosmosStack.Extensions.Dependency\CosmosStack.Extensions.Dependency.csproj", "{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Dependency", "src\Cosmos.Extensions.Dependency\Cosmos.Extensions.Dependency.csproj", "{683BC4A3-0A87-4C26-BE31-0B92F56C9EF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.DependencyInjection", "src\CosmosStack.Extensions.DependencyInjection\CosmosStack.Extensions.DependencyInjection.csproj", "{14F856A8-63A8-46D1-BF1E-876EFEE9901D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.DependencyInjection", "src\Cosmos.Extensions.DependencyInjection\Cosmos.Extensions.DependencyInjection.csproj", "{14F856A8-63A8-46D1-BF1E-876EFEE9901D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.Autofac", "src\CosmosStack.Extensions.Autofac\CosmosStack.Extensions.Autofac.csproj", "{A2CB6EF9-064A-4209-B9C4-2A3733E074A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Autofac", "src\Cosmos.Extensions.Autofac\Cosmos.Extensions.Autofac.csproj", "{A2CB6EF9-064A-4209-B9C4-2A3733E074A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.AspectCoreInjector", "src\CosmosStack.Extensions.AspectCoreInjector\CosmosStack.Extensions.AspectCoreInjector.csproj", "{DC1B514F-6CA1-40DB-807D-467631A0F057}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.AspectCoreInjector", "src\Cosmos.Extensions.AspectCoreInjector\Cosmos.Extensions.AspectCoreInjector.csproj", "{DC1B514F-6CA1-40DB-807D-467631A0F057}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyTests", "tests\DependencyTests\DependencyTests.csproj", "{B9DC84C5-30BA-442D-A0C9-2829E8E3FD84}"
 EndProject
@@ -36,12 +36,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{A4C1C0
 ProjectSection(SolutionItems) = preProject
 	asset\images\icon.back.png = asset\images\icon.back.png
 	asset\images\icon.png = asset\images\icon.png
+	asset\images\icon,back3.png = asset\images\icon,back3.png
+	asset\images\icon.back2.png = asset\images\icon.back2.png
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "props", "props", "{8CFC4169-3A7E-4F0B-8509-9C50A088B6D3}"
 ProjectSection(SolutionItems) = preProject
 	asset\props\misc.props = asset\props\misc.props
 	asset\props\package.props = asset\props\package.props
+	asset\props\sourcelink.env.props = asset\props\sourcelink.env.props
+	asset\props\target.feature.props = asset\props\target.feature.props
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "functions", "functions", "{ECA76F44-6024-4097-8F3D-7362B78515A8}"

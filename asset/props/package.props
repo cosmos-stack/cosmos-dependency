@@ -1,12 +1,19 @@
 <Project>
-	<PropertyGroup Label="Package">
-		<Product>CosmosStack.Dependency</Product>
-		<Authors>AlexLEWIS;CosmosStack</Authors>
-		<RepositoryUrl>https://github.com/cosmos-stack/cosmos-dependency</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageProjectUrl>https://github.com/cosmos-stack/cosmos-dependency</PackageProjectUrl>
-		<PackageIcon>icon.png</PackageIcon>
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageTags>CosmosStack;Dependency</PackageTags>
-	</PropertyGroup>
+
+    <PropertyGroup Label="Package">
+        <Product>CosmosStack.Dependency</Product>
+        <Authors>AlexLEWIS;CosmosStack</Authors>
+        <RepositoryUrl>https://github.com/cosmos-stack/cosmos-dependency</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageProjectUrl>https://github.com/cosmos-stack/cosmos-dependency</PackageProjectUrl>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageTags>CosmosStack;Dependency</PackageTags>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
 </Project>
