@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Dependency</AssemblyName>
+        <PackageId>CosmosStack.Extensions.Dependency</PackageId>
+        <Description>Dependency core libaray for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <Import Project="..\..\common.props" />
+
+    <Import Project="dependency.props" />
+
+</Project>

@@ -1,0 +1,7 @@
+﻿<Project>
+
+    <ItemGroup>
+        <PackageReference Include="CosmosStack.Standard" Version="$(Standard-RefVersion)" />
+    </ItemGroup>
+
+</Project>

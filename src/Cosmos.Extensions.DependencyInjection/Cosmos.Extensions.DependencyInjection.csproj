@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.DependencyInjection</AssemblyName>
+        <PackageId>CosmosStack.Extensions.DependencyInjection</PackageId>
+        <Description>Extensions of IOC component Microsoft.Extensions.DependencyInjection for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <Import Project="..\..\common.props" />
+
+    <Import Project="dependency.props" />
+
+    <Import Project="references.props" />
+
+</Project>

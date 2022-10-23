@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Extensions.DependencyInjection</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Dependency.Events.MicrosoftEventPublisher">
+            <summary>
+            Microsoft Dependency Injection Event Publisher
+            </summary>
+        </member>
+        <member name="T:Cosmos.Dependency.Events.MicrosoftOriginBuildExtensions">
+            <summary>
+            Microsoft Dependency Injection Original Building Extensions
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.Events.MicrosoftOriginBuildExtensions.AddIocEventing(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add IoC Eventing Support
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.Events.MicrosoftOriginBuildExtensions.AddIocEventMessage``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add IoC Eventing Message Support
+            </summary>
+            <param name="services"></param>
+            <typeparam name="THandle"></typeparam>
+            <typeparam name="TMessage"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.Events.MicrosoftProxyBuildExtensions.AddIocEventService(Cosmos.Dependency.MicrosoftProxyRegister)">
+            <summary>
+            Add IoC Event Service Support
+            </summary>
+            <param name="register"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dependency.Events.MicrosoftProxyBuildExtensions.AddIocEventHandle``2(Cosmos.Dependency.MicrosoftProxyRegister)">
+            <summary>
+            Add IoC Event Handle
+            </summary>
+            <param name="register"></param>
+            <typeparam name="THandle"></typeparam>
+            <typeparam name="TMessage"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Dependency.LifetimeExtensions">
+            <summary>
+            Lifetime extensions
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.LifetimeExtensions.ToMsLifetime(Cosmos.Dependency.DependencyLifetimeType)">
+            <summary>
+            To Microsoft Lifetime
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Dependency.ServiceProviderExtensions">
+            <summary>
+            Extensions for service provider
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.ServiceProviderExtensions.ToAbstract(System.IServiceProvider)">
+            <summary>
+            To abstract
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Dependency.MicrosoftProxyRegister">
+            <summary>
+            Microsoft dependency proxy register
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftProxyRegister.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftProxyRegister.IsRegistered(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftProxyRegister.IsRegistered``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftProxyRegister.IsRegistered(System.Type,Cosmos.Dependency.DependencyLifetimeType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftProxyRegister.IsRegistered``1(Cosmos.Dependency.DependencyLifetimeType)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftProxyRegister.Dispose(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Dependency.MicrosoftServiceResolver">
+            <summary>
+            Microsoft service resolver wrapper
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftServiceResolver.#ctor(System.IServiceProvider)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Dependency.MicrosoftServiceResolver"/>
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftServiceResolver.Resolve(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftServiceResolver.Resolve``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftServiceResolver.RequiredResolve(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftServiceResolver.RequiredResolve``1">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftServiceResolver.TryResolve(System.Type,System.Object@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftServiceResolver.TryResolve``1(System.Object@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftServiceResolver.ResolveMany(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Dependency.MicrosoftServiceResolver.ResolveMany``1">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.DependencyInjectionExtensions">
+            <summary>
+            Extensions for Dependency Injection
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.DependencyInjectionExtensions.AddRegisterProxyFrom(Microsoft.Extensions.DependencyInjection.IServiceCollection,Cosmos.Dependency.DependencyProxyRegister)">
+            <summary>
+            Add Register Proxy
+            </summary>
+            <param name="services"></param>
+            <param name="bag"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.FluentDependencyInjectionExtensions">
+            <summary>
+            Extensions for Dependency Injection
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.FluentDependencyInjectionExtensions.BeginTypedRegister``1(``0)">
+            <summary>
+            Begin register
+            </summary>
+            <param name="services"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.FluentDependencyInjectionExtensions.BeginRegister``1(``0)">
+            <summary>
+            Begin register
+            </summary>
+            <param name="services"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.FluentDependencyInjectionExtensions.Finish(Cosmos.Dependency.DependencyProxyRegister{Microsoft.Extensions.DependencyInjection.IServiceCollection})">
+            <summary>
+            End register
+            </summary>
+            <param name="register"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.FluentDependencyInjectionExtensions.Finish``1(Cosmos.Dependency.DependencyProxyRegister)">
+            <summary>
+            End register
+            </summary>
+            <param name="register"></param>
+            <typeparam name="TService"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+    </members>
+</doc>
