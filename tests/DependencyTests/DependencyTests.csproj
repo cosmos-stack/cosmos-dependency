@@ -3,23 +3,22 @@
     <Import Project="..\..\common.tests.props" />
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
-        <PackageReference Include="Shouldly">
-            <Version Condition=" '$(TargetFramework)' == 'net452' ">3.0.2</Version>
-            <Version Condition=" '$(TargetFramework)' != 'net452' ">4.0.3</Version>
-        </PackageReference>
-        <PackageReference Include="xunit" Version="2.4.1" />
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0-preview-20220726-02" />
+        <PackageReference Include="Shouldly" Version="4.1.0" />
+        <PackageReference Include="xunit" Version="2.4.2" />
+        <PackageReference Include="xunit.runner.visualstudio">
+            <Version Condition=" '$(TargetFramework)' != 'net452' ">2.4.5</Version>
+            <Version Condition=" '$(TargetFramework)' == 'net452' ">2.4.3</Version>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
-            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
         </PackageReference>
         <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\CosmosStack.Extensions.AspectCoreInjector\CosmosStack.Extensions.AspectCoreInjector.csproj" />
-      <ProjectReference Include="..\..\src\CosmosStack.Extensions.Autofac\CosmosStack.Extensions.Autofac.csproj" />
-      <ProjectReference Include="..\..\src\CosmosStack.Extensions.DependencyInjection\CosmosStack.Extensions.DependencyInjection.csproj" />
+      <ProjectReference Include="..\..\src\Cosmos.Extensions.AspectCoreInjector\Cosmos.Extensions.AspectCoreInjector.csproj" />
+      <ProjectReference Include="..\..\src\Cosmos.Extensions.Autofac\Cosmos.Extensions.Autofac.csproj" />
+      <ProjectReference Include="..\..\src\Cosmos.Extensions.DependencyInjection\Cosmos.Extensions.DependencyInjection.csproj" />
     </ItemGroup>
 
 </Project>

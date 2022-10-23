@@ -1,6 +1,6 @@
 using System.Linq;
 using Autofac;
-using CosmosStack.Dependency;
+using Cosmos.Dependency;
 using Microsoft.Extensions.DependencyInjection;
 using Shouldly;
 using Xunit;
